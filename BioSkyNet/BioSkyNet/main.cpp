@@ -9,7 +9,7 @@ int main()
 	SmartBio::View::Application app;
 
 
-	std::cout << "Hello world All1" << std::endl;
+	std::cout << "Hello world All12" << std::endl;
 	std::cin.get();
 	return 0;
 }

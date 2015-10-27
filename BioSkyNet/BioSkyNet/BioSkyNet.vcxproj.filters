@@ -13,6 +13,48 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\resources">
+      <UniqueIdentifier>{cc67021a-dc85-4ce4-877d-bdbc97729e63}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources">
+      <UniqueIdentifier>{8a845cb7-72e2-4dbe-b72b-00b9fd700dc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\settings">
+      <UniqueIdentifier>{2b7b344e-bb91-4990-9228-35b0cbf1996a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\main_pages">
+      <UniqueIdentifier>{19050448-c8a6-4268-a568-ef8c794e31ec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\main_controls">
+      <UniqueIdentifier>{93ebf850-6f66-49c1-88ee-92dca8b7f855}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\utils">
+      <UniqueIdentifier>{e3023271-7aba-4e8c-98d4-310ee2a7f133}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\common">
+      <UniqueIdentifier>{7ac5f7f8-262f-4add-a10a-5dfadd993605}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\control_items">
+      <UniqueIdentifier>{11f0544f-e9bb-4391-b735-7160c3119bc5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\main_pages">
+      <UniqueIdentifier>{9279042c-f536-4082-884d-0aa28a1dfee4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\main_controls">
+      <UniqueIdentifier>{5a948eb6-97eb-4dfc-88c8-71819118cc1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common">
+      <UniqueIdentifier>{69fcd029-a549-4ec4-b246-b5cbe5b43fb6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\common_items">
+      <UniqueIdentifier>{d6885067-7b21-4b18-b481-5a32a2335c2f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\utils">
+      <UniqueIdentifier>{b2c0c409-b0fb-4648-9a39-939de9c72828}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\settings">
+      <UniqueIdentifier>{d5e5daf4-d7b8-4292-976e-04eb09dc701a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bio_form.cpp">
@@ -27,6 +69,72 @@
     <ClCompile Include="bio_view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bio_control_resource.cpp">
+      <Filter>Source Files\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_form_resources.cpp">
+      <Filter>Source Files\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_general_settings_resource.cpp">
+      <Filter>Source Files\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_main_menu_resource.cpp">
+      <Filter>Source Files\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_toolbar_resource.cpp">
+      <Filter>Source Files\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_face_settings.cpp">
+      <Filter>Source Files\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_general_settings.cpp">
+      <Filter>Source Files\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_toolbar.cpp">
+      <Filter>Source Files\main_controls</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_info_resource.cpp">
+      <Filter>Source Files\resources</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_listbook_utils.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_main_menu.cpp">
+      <Filter>Source Files\main_controls</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_personal_page.cpp">
+      <Filter>Source Files\main_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_settings.cpp">
+      <Filter>Source Files\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_properties_utils.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="icon_loadable.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="main_bio_page.cpp">
+      <Filter>Source Files\main_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="tab_controller.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="tab_page.cpp">
+      <Filter>Source Files\common</Filter>
+    </ClCompile>
+    <ClCompile Include="uapp_info_item.cpp">
+      <Filter>Source Files\common_items</Filter>
+    </ClCompile>
+    <ClCompile Include="uinfo_item.cpp">
+      <Filter>Source Files\common_items</Filter>
+    </ClCompile>
+    <ClCompile Include="uinfo_menu_item.cpp">
+      <Filter>Source Files\common_items</Filter>
+    </ClCompile>
+    <ClCompile Include="usettings_info_item.cpp">
+      <Filter>Source Files\common_items</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bio_application.hpp">
@@ -40,6 +148,78 @@
     </ClInclude>
     <ClInclude Include="bio_view.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_control_resource.hpp">
+      <Filter>Header Files\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_form_resources.hpp">
+      <Filter>Header Files\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_general_settings_resource.hpp">
+      <Filter>Header Files\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_main_menu_resource.hpp">
+      <Filter>Header Files\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_toolbar_resource.hpp">
+      <Filter>Header Files\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_resources.hpp">
+      <Filter>Header Files\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_info_resource.hpp">
+      <Filter>Header Files\resources</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_face_settings.hpp">
+      <Filter>Header Files\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_general_settings.hpp">
+      <Filter>Header Files\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_toolbar.hpp">
+      <Filter>Header Files\main_controls</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_settings.hpp">
+      <Filter>Header Files\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_main_menu.hpp">
+      <Filter>Header Files\main_controls</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_personal_page.hpp">
+      <Filter>Header Files\main_pages</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_main_menu_utils.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_listbook_utils.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_properties_utils.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="icon_loadable.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="main_bio_page.hpp">
+      <Filter>Header Files\main_pages</Filter>
+    </ClInclude>
+    <ClInclude Include="tab_controller.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="tab_page.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="uapp_info_item.hpp">
+      <Filter>Header Files\control_items</Filter>
+    </ClInclude>
+    <ClInclude Include="uinfo_item.hpp">
+      <Filter>Header Files\control_items</Filter>
+    </ClInclude>
+    <ClInclude Include="uinfo_menu_item.hpp">
+      <Filter>Header Files\control_items</Filter>
+    </ClInclude>
+    <ClInclude Include="usettings_info_item.hpp">
+      <Filter>Header Files\control_items</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

@@ -1,22 +1,20 @@
 #pragma once
 
-#ifndef Bio_Application_INCLUDED
-#define Bio_Application_INCLUDED
+#ifndef BIO_APPLICATION_INCLUDED
+#define BIO_APPLICATION_INCLUDED
 
-namespace SmartBio 
+namespace SmartBio { namespace View
 {
-  namespace View
-  {
-		class BioApplication : public wxApp
-		{
-		public:
-			bool OnInit();
-			//int  OnExit();
-		private:
-	
-		};
 
-	}
-}
+	class BioApplication : public wxApp
+	{
+	public:
+		bool OnInit();
+		//int  OnExit();
+	private:
+	
+	};
+
+}}
 
 #endif

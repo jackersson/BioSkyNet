@@ -5,8 +5,6 @@
 
 #include "../SmartInterfaces/imodel.hpp"
 
-//#include "log_control.hpp"
-
 namespace SmartBio { namespace View
 {
 	class BioForm : public wxFrame
@@ -52,7 +50,7 @@ namespace SmartBio { namespace View
 		static const std::size_t WINDOW_HEIGHT = 640;
 				
 	private:
-		//Poco::SharedPtr<LogControl>    log_control_;
+		/*Poco::SharedPtr<LogControl>    log_control_;*/
 		//Poco::SharedPtr<TabController> tab_control_;
 
 	private: // UI elements

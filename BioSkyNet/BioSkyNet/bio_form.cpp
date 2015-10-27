@@ -1,23 +1,23 @@
 #include "stdafx.h"
 #include "bio_form.hpp"
 
-//#include "bio_resources.hpp"
+#include "bio_resources.hpp"
 //#include "bio_view.hpp"
 
 //#include "ui_texts.hpp"
-//#include "bio_main_menu.hpp"
-//#include "bio_toolbar.hpp"
-//#include "tab_controller.hpp"
+#include "bio_main_menu.hpp"
+#include "bio_toolbar.hpp"
+#include "tab_controller.hpp"
 //#include "start_page.hpp"
 
-//#include "main_bio_page.hpp"
+#include "main_bio_page.hpp"
 
 //#include "sample.xpm"
-//#include "bio_form_resources.hpp"
+#include "bio_form_resources.hpp"
 
-//#include "uapp_info_item.hpp"
+#include "uapp_info_item.hpp"
 
-//#include "bio_settings.hpp"
+#include "bio_settings.hpp"
 //#include "log_control.hpp"
 
 #include <memory>
@@ -90,7 +90,7 @@ namespace SmartBio { namespace View
 
 	void BioForm::create()
 	{
-		/*SetMenuBar( new BioMainMenu() );
+		SetMenuBar( new BioMainMenu() );
 		CreateStatusBar(2);
 		logg_control_ = new wxTextCtrl(this, UIResources::ID_LOG_AUI, wxEmptyString, wxDefaultPosition
 			, wxSize(250, 100), wxTE_MULTILINE | wxTE_READONLY | wxNO_BORDER);
@@ -112,8 +112,8 @@ namespace SmartBio { namespace View
 
 		//sizer->Add(m_tabbedPanel, 1, wxEXPAND | wxALL, 0);
 
-		StartPage*    start_page = new StartPage( this,  wxID_ANY);
-		tb->AddPage(start_page, "test", true, page_bmp);
+		//StartPage*    start_page = new StartPage( this,  wxID_ANY);
+		//tb->AddPage(start_page, "test", true, page_bmp);
 		//tb->Thaw();
 
 		MainBioPage*    bio_page = new MainBioPage(this, wxID_ANY);
@@ -131,7 +131,7 @@ namespace SmartBio { namespace View
 
 		wxPanel* panel1 = new wxPanel(this, wxID_ANY, wxDefaultPosition, wxSize(250, 100));
 		wxBoxSizer* boxSizer393 = new wxBoxSizer(wxVERTICAL);
-		panel1->SetSizer(boxSizer393);*/
+		panel1->SetSizer(boxSizer393);
 
 //		wxListbook* ls;
 		
@@ -142,7 +142,7 @@ namespace SmartBio { namespace View
 
 		//pr_gris->AddPage("general", );
 		//pr_gris->AddPage("face");
-		/*BioSettings* settings = new BioSettings(panel1, wxID_ANY, wxDefaultPosition, wxSize(-1, -1), wxPG_TOOLBAR | wxPG_DESCRIPTION | wxPG_SPLITTER_AUTO_CENTER | wxPG_BOLD_MODIFIED);
+		BioSettings* settings = new BioSettings(panel1, wxID_ANY, wxDefaultPosition, wxSize(-1, -1), wxPG_TOOLBAR | wxPG_DESCRIPTION | wxPG_SPLITTER_AUTO_CENTER | wxPG_BOLD_MODIFIED);
 
 		boxSizer393->Add(settings, 1, wxALL | wxEXPAND, 5);
 
@@ -169,7 +169,7 @@ namespace SmartBio { namespace View
 		this->SetSize(WINDOW_WIDTH, WINDOW_HEIGHT);
 		this->Centre();
 
-		frame_manager_.Update();*/
+		frame_manager_.Update();
 	}
 	
 	/*void BioForm::create()

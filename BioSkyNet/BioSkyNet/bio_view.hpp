@@ -8,7 +8,7 @@
 //#include "../SmartBioModel/bio_model.hpp"
 #include "../SmartInterfaces/iview.hpp"
 
-//#include "tab_controller.hpp"
+#include "tab_controller.hpp"
 #include "bio_form.hpp"
 
 
@@ -39,8 +39,8 @@ namespace SmartBio { namespace View
 	private:
 		//BioApplication* bio_application;
 		BioForm*  bio_form_;
-	/*	Poco::SharedPtr<TabController> tab_control_;
-		Poco::SharedPtr<LogControl>    log_control_;*/
+		Poco::SharedPtr<TabController> tab_control_;
+		/*Poco::SharedPtr<LogControl>    log_control_;*/
 		void subscribe();
 
 

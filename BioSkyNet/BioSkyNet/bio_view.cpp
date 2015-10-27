@@ -3,13 +3,12 @@
 
 //#include "notifications.h"
 
-//#include "bio_form.hpp"
+#include "bio_form.hpp"
 
-/*
-#include "start_page.hpp"
-#include "subject_page.hpp"
-#include "settings_page.hpp"
-#include "ui_texts.hpp"*/
+//#include "start_page.hpp"
+///#include "subject_page.hpp"
+//#include "settings_page.hpp"
+//#include "ui_texts.hpp"
 
 
 namespace SmartBio { namespace View 
@@ -34,7 +33,8 @@ namespace SmartBio { namespace View
 	}
 
 	void BioView::do_initialize()
-	{		
+	{
+		
 		bio_form_ = new BioForm( NULL );			
 		bio_form_->Show(true);
 		//bio_form_->Refresh();

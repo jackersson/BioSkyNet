@@ -3,6 +3,8 @@
 #include "bio_form.hpp"
 
 #include "bio_view.hpp"
+//#include "../SmartBioModel/bio_model.hpp"
+
 
 IMPLEMENT_APP( SmartBio::View::BioApplication )
 

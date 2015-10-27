@@ -15,5 +15,12 @@
 #include <wx/infobar.h>
 #include <wx/propgrid/advprops.h>
 
-#include <Poco/SharedLibrary.h>
+#include <Poco/NObserver.h>
+#include <Poco/NotificationCenter.h>
 
+
+#include "../SmartInterfaces/patterns.hpp"
+//#include "../SmartBioModel/notifications.hpp"
+
+
+#include <map>

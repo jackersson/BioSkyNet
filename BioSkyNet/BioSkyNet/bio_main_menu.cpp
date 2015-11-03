@@ -25,10 +25,6 @@ namespace SmartBio
 			utils.appendChild(UIMainMenu::ID_EXIT, fileMenu,           wxITEM_NORMAL, *resource);
 			utils.appendRoot (UIMainMenu::ID_FILE, *this, fileMenu,/* wxITEM_NORMAL,*/ *resource);
 
-			wxMenu* editMenu = new wxMenu;
-			//utils.appendChild(UIMainMenu::ID_EXIT, fileMenu, wxITEM_NORMAL, *resource);
-			utils.appendRoot(UIMainMenu::ID_EDIT, *this, editMenu,/* wxITEM_NORMAL,*/ *resource);
-
 			wxMenu* viewMenu = new wxMenu;			
 			utils.appendCheckItem(UIMainMenu::ID_TOOLBAR      , viewMenu, /*wxITEM_NORMAL,*/ *resource);
 			utils.appendCheckItem(UIMainMenu::ID_SETTINGS     , viewMenu, /*wxITEM_NORMAL,*/ *resource);

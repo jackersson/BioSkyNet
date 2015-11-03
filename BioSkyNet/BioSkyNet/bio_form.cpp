@@ -19,9 +19,6 @@
 
 #include "bio_settings.hpp"
 //#include "log_control.hpp"
-#include "bio_users_page.hpp"
-#include "bio_surveillance_page.hpp"
-#include "bio_journal_page.hpp"
 
 #include <memory>
 
@@ -93,11 +90,8 @@ namespace SmartBio { namespace View
 
 	void BioForm::create()
 	{
-
 		SetMenuBar( new BioMainMenu() );
-
-
-		//CreateStatusBar(2);
+		CreateStatusBar(2);
 		logg_control_ = new wxTextCtrl(this, UIResources::ID_LOG_AUI, wxEmptyString, wxDefaultPosition
 			, wxSize(250, 100), wxTE_MULTILINE | wxTE_READONLY | wxNO_BORDER);
 
@@ -109,10 +103,10 @@ namespace SmartBio { namespace View
 		long m_notebook_style;
 		m_notebook_style = wxAUI_NB_DEFAULT_STYLE | wxAUI_NB_TAB_EXTERNAL_MOVE | wxNO_BORDER;
 
-		TabController* tb = new TabController( this, wxID_ANY
-			                                   , wxPoint(client_size.x, client_size.y)
-			                                   , wxSize(430, 200)
-			                                   , m_notebook_style);
+		TabController* tb = new TabController(this, wxID_ANY,
+			wxPoint(client_size.x, client_size.y),
+			wxSize(430, 200),
+			m_notebook_style);
 		//tb->Freeze();
 		wxBitmap page_bmp = wxArtProvider::GetBitmap(wxART_NORMAL_FILE, wxART_OTHER, wxSize(16, 16));
 
@@ -122,18 +116,9 @@ namespace SmartBio { namespace View
 		//tb->AddPage(start_page, "test", true, page_bmp);
 		//tb->Thaw();
 
-		MainBioPage*   bio_page = new MainBioPage(this, wxID_ANY);
-		tb->AddPage(bio_page, "User Data", true, page_bmp);
+		MainBioPage*    bio_page = new MainBioPage(this, wxID_ANY);
+		tb->AddPage(bio_page, "main", true, page_bmp);
 		//tb->Thaw();
-
-		BioUsersPage*   bio_users_page = new BioUsersPage(this, wxID_ANY);
-		tb->AddPage(bio_users_page, "Users List", false, page_bmp);
-
-		BioSurveillancePage*   bio_surveillance_page = new BioSurveillancePage(this, wxID_ANY);
-		tb->AddPage(bio_surveillance_page, "Video Surveillance", false, page_bmp);
-
-		BioJournalPage*   bio_journal_page = new BioJournalPage(this, wxID_ANY);
-		tb->AddPage(bio_journal_page, "Journal", false, page_bmp);
 
 		frame_manager_.AddPane(tb, wxAuiPaneInfo().CenterPane());
 
@@ -157,14 +142,11 @@ namespace SmartBio { namespace View
 
 		//pr_gris->AddPage("general", );
 		//pr_gris->AddPage("face");
+		BioSettings* settings = new BioSettings(panel1, wxID_ANY, wxDefaultPosition, wxSize(-1, -1), wxPG_TOOLBAR | wxPG_DESCRIPTION | wxPG_SPLITTER_AUTO_CENTER | wxPG_BOLD_MODIFIED);
 
-		
+		boxSizer393->Add(settings, 1, wxALL | wxEXPAND, 5);
 
-		BioSettings* settings = new BioSettings(this, wxID_ANY);
-
-		//boxSizer393->Add(settings, 1, wxALL | wxEXPAND, 5);
-
-		frame_manager_.AddPane(settings, wxAuiPaneInfo().
+		frame_manager_.AddPane(panel1, wxAuiPaneInfo().
 			Name(wxT("test10")).Caption(wxT("Text Pane with Hide Prompt")).
 			Right().Icon(wxArtProvider::GetBitmap(wxART_WARNING,
 			wxART_OTHER,

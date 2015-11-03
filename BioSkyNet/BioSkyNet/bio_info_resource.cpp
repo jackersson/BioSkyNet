@@ -16,7 +16,7 @@ namespace SmartBio
 		void BioInfoResource::do_initialize()
 		{
 		
-			std::string p_personal_info         = "Profile";
+			std::string p_personal_info         = "Personal information";
 			std::string p_personal_info_icon    = "resources\\pages\\profile.png";
 
 			std::string p_face_info             = "Faces manager";

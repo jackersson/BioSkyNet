@@ -26,7 +26,10 @@ namespace SmartBio
 
 			BioPropertiesUtils utils;
 
-			email_notification_ = utils.createBoolProperty(ID_EMAIL_NOTIFICATION		, *this, *resource);
+			utils.createEnumProperty( *this, UIBioSettings::ID_MATCHING_THRESHOLD        , *resource);
+			utils.createEnumProperty( *this, UIBioSettings::ID_MAXIMAL_RESULT_COUNT      , *resource);
+			utils.createBoolProperty( *this, UIBioSettings::ID_RETURN_MATCHING_DETAILS   , *resource);
+			utils.createBoolProperty( *this, UIBioSettings::ID_MATCHING_FIRST_RESULT_ONLY, *resource);
 			
 		
 

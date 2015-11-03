@@ -14,8 +14,6 @@
 #include <wx/gbsizer.h>
 #include <wx/infobar.h>
 #include <wx/propgrid/advprops.h>
-#include <wx/dataview.h>
-#include <wx/commandlinkbutton.h>
 
 #include <Poco/NObserver.h>
 #include <Poco/NotificationCenter.h>

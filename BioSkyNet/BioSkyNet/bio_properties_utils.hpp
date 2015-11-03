@@ -1,12 +1,8 @@
 #ifndef Bio_Properties_Utils_INCLUDED
 #define Bio_Properties_Utils_INCLUDED
 
-//#include "bio_main_menu_resource.hpp"
-
-
 #include "bio_resources.hpp"
 #include "bio_general_settings_resource.hpp"
-
 
 namespace SmartBio
 {
@@ -18,8 +14,17 @@ namespace SmartBio
 			BioPropertiesUtils();
 			~BioPropertiesUtils();
 
-			void createEnumProperty(wxPropertyGridPage& page, UIBioSettings index, BioGeneralSettingsResource& resource);			
-			void createBoolProperty(wxPropertyGridPage& page, UIBioSettings index, BioGeneralSettingsResource& resource);		
+			wxEnumProperty* createEnumProperty( int index, wxPropertyGridPage& page
+														            , BioControlResource<USettingInfoItem>& resource);
+
+			wxBoolProperty* createBoolProperty( int index, wxPropertyGridPage& page
+														            , BioControlResource<USettingInfoItem>& resource);
+
+			wxPropertyCategory* createPropertyCategory( int index, wxPropertyGridPage& page
+														                    , BioControlResource<USettingInfoItem>& resource);
+
+		/*	wxEnumProperty* BioPropertiesUtils::createEnumPropertyC(int index, wxPropertyGridPage& page
+				, BioControlResource<USettingInfoItem>& resource);*/
 
 		};
 	}

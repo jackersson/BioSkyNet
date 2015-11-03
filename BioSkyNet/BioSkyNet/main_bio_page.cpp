@@ -1,14 +1,12 @@
 #include "stdafx.h"
 #include "main_bio_page.hpp"
 
-#include <memory>
-
-//#include "wx/withimages.h"
 #include "uinfo_item.hpp"
 #include "bio_listbook_utils.hpp"
 #include "bio_resources.hpp"
 #include "bio_personal_page.hpp"
-//#include "bio_info_resource.hpp"
+#include "bio_face_page.hpp"
+#include "bio_info_resource.hpp"
 
 namespace SmartBio
 {
@@ -38,6 +36,7 @@ namespace SmartBio
 		void MainBioPage::do_create()
 		{
 			Poco::SharedPtr<BioInfoResource> resource(new BioInfoResource());
+
 			BioListbookUtils utils;
 
 			wxBoxSizer* main_sizer = new wxBoxSizer(wxVERTICAL);
@@ -54,11 +53,12 @@ namespace SmartBio
 			wxPanel* panel = new wxPanel(listbook_, wxID_ANY, wxDefaultPosition, wxSize(-1, -1), wxTAB_TRAVERSAL | wxBORDER_THEME);
 		
 			BioPersonalPage* personal_page = new BioPersonalPage(listbook_, wxID_ANY);
+			BioFacePage* face_page = new BioFacePage(listbook_, wxID_ANY);
 
-			utils.addPage(UIResources::ID_PERSON_INFO_PAGE     , personal_page, *listbook_, *resource, *image_list, true);
-			utils.addPage(UIResources::ID_FACE_INFO_PAGE       , panel, *listbook_, *resource, *image_list, false);
-			utils.addPage(UIResources::ID_FINGERPRINT_INFO_PAGE, panel, *listbook_, *resource, *image_list, false);
-			utils.addPage(UIResources::ID_IRIS_INFO_PAGE       , panel, *listbook_, *resource, *image_list, false);
+			utils.addPage(ID_PERSON_INFO_PAGE     , personal_page, *listbook_, *resource, *image_list, true );
+			utils.addPage(ID_FACE_INFO_PAGE       , face_page    , *listbook_, *resource, *image_list, false);
+			utils.addPage(ID_FINGERPRINT_INFO_PAGE, panel        , *listbook_, *resource, *image_list, false);
+			utils.addPage(ID_IRIS_INFO_PAGE       , panel        , *listbook_, *resource, *image_list, false);
 			
 			sizer->Add(listbook_, 1, wxALL | wxEXPAND, 5);
 

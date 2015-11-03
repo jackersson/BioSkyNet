@@ -12,7 +12,8 @@ namespace SmartBio
 
 
 		void BioListbookUtils::addPage( int index, wxPanel* parent, wxListbook& listbook
-		                            	, BioInfoResource& resource, wxImageList& image_list, bool selected )
+		                            	, BioControlResource<UInfoItem>& resource
+																	, wxImageList& image_list, bool selected )
 		{
 			if (parent == NULL)
 				return;

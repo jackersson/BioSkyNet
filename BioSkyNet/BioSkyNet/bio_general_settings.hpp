@@ -17,6 +17,8 @@ namespace SmartBio
 		private:
 			void do_initialize();
 
+		private:
+			wxBoolProperty* email_notification_;
 		};
 	}
 }

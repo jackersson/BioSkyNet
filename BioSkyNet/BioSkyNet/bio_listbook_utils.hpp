@@ -1,7 +1,8 @@
 #ifndef Bio_Listbook_Utils_INCLUDED
 #define Bio_Listbook_Utils_INCLUDED
 
-#include "bio_info_resource.hpp"
+#include "uinfo_item.hpp"
+#include "bio_control_resource.hpp"
 
 namespace SmartBio
 {
@@ -14,7 +15,8 @@ namespace SmartBio
 			~BioListbookUtils();
 
 			void addPage( int index, wxPanel* parent, wxListbook& listbook
-				          , BioInfoResource& resource, wxImageList& image_list, bool selected = false );
+				          , BioControlResource<UInfoItem>& resource
+				          , wxImageList& image_list, bool selected = false);
 		};
 
 

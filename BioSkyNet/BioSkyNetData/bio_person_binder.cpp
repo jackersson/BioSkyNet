@@ -15,7 +15,7 @@ namespace Poco
 		{
 			//poco_assert_dbg(!pBinder.isNull());
 
-			pBinder->bind(pos++, obj.index(), dir);
+			pBinder->bind(pos++, obj.index()      , dir);
 			pBinder->bind(pos++, obj.firstName()  , dir);
 			pBinder->bind(pos++, obj.lastName()   , dir);
 			pBinder->bind(pos++, obj.dateOfBirth(), dir);

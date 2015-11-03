@@ -1,7 +1,7 @@
 #include "stdafx.h"
-#include "bio_face_settings.hpp"
+#include "bio_face_information_settings.hpp"
 
-#include "bio_face_settings_resource.hpp"
+#include "bio_face_information_settings_resource.hpp"
 
 
 #include "bio_resources.hpp"
@@ -13,28 +13,32 @@ namespace SmartBio
 	namespace View
 	{
 
-		BioFaceSettings::BioFaceSettings() : wxPropertyGridPage()
+		BioFaceInformationSettings::BioFaceInformationSettings() : wxPropertyGridPage()
 		{
 			do_initialize();
 		}
 
-		BioFaceSettings::~BioFaceSettings() {}
-		
-		void BioFaceSettings::do_initialize()
+		BioFaceInformationSettings::~BioFaceInformationSettings() {}
+
+		void BioFaceInformationSettings::do_initialize()
 		{
 
 
-			Poco::SharedPtr<BioFaceSettingsResource> resource(new BioFaceSettingsResource());
+			Poco::SharedPtr<BioFaceInformationSettingsResource> resource(new BioFaceInformationSettingsResource());
 
 
 
 			BioPropertiesUtils utils;
 
-			age_treshold_				= utils.createEnumProperty(ID_FACE_AGE_TRESHOLD				, *this, *resource);
-			face_confidence_		= utils.createEnumProperty(ID_FACE_FACE_CONFIDENCE		, *this, *resource);
-			min_eye_distance_		= utils.createEnumProperty(ID_FACE_MIN_EYE_DISTANCE		, *this, *resource);
-		  max_eye_distance_		= utils.createEnumProperty(ID_FACE_MAX_EYE_DISTANCE		, *this, *resource);
-			matching_treshold_	= utils.createEnumProperty(ID_FACE_MATCHING_TRESHOLD	, *this, *resource);
+
+
+			number_of_faces_		= utils.createEnumProperty(ID_FACE_INFORMATION_NUMBER_OF_FACES		, *this, *resource);
+			natural_skin_color_ = utils.createEnumProperty(ID_FACE_INFORMATION_NATURAL_SKIN_COLOR	, *this, *resource);
+			gender_							= utils.createEnumProperty(ID_FACE_INFORMATION_GENDER							, *this, *resource);
+			age_								= utils.createEnumProperty(ID_FACE_INFORMATION_AGE								, *this, *resource);
+			glasses_						= utils.createEnumProperty(ID_FACE_INFORMATION_GLASSES						, *this, *resource);
+			resolution_					= utils.createEnumProperty(ID_FACE_INFORMATION_RESOLURION					, *this, *resource);
+			ethnicity_					= utils.createEnumProperty(ID_FACE_INFORMATION_ETHNICITY					, *this, *resource);
 
 
 
@@ -62,10 +66,10 @@ namespace SmartBio
 			chs22.Add("200", 200);
 			chs22.Add("500", 500);
 			chs22.Add("1000", 1000);
-		
+
 			wxEnumProperty* p_max_result_count = new wxEnumProperty(max_result_count, wxPG_LABEL, chs22, 50);
 			p_max_result_count->SetHelpString(texts_->get(UIBioSettings::ID_MAXIMAL_RESULT_COUNT_HINT));
-	
+
 			wxSpinCtrl* sp;
 			wxPGEditor* ed = new wxPGEditor();
 			wxPropertyGrid::RegisterEditorClass(sp)

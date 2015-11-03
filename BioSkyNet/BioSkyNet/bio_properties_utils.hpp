@@ -18,8 +18,15 @@ namespace SmartBio
 			BioPropertiesUtils();
 			~BioPropertiesUtils();
 
-			void createEnumProperty(wxPropertyGridPage& page, UIBioSettings index, BioGeneralSettingsResource& resource);			
-			void createBoolProperty(wxPropertyGridPage& page, UIBioSettings index, BioGeneralSettingsResource& resource);		
+			wxEnumProperty* createEnumProperty(int index, wxPropertyGridPage& page
+														, BioControlResource<USettingInfoItem>& resource);
+			wxBoolProperty* createBoolProperty(int index, wxPropertyGridPage& page
+														, BioControlResource<USettingInfoItem>& resource);
+			wxPropertyCategory* createPropertyCategory(int index, wxPropertyGridPage& page
+														, BioControlResource<USettingInfoItem>& resource);
+
+			wxEnumProperty* BioPropertiesUtils::createEnumPropertyC(int index, wxPropertyGridPage& page
+				, BioControlResource<USettingInfoItem>& resource);
 
 		};
 	}

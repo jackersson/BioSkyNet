@@ -18,9 +18,8 @@ namespace SmartBio
 
 		
 
-		void BioPropertiesUtils::createEnumProperty(  wxPropertyGridPage& page
-			                                          , UIBioSettings index
-			                                          , BioGeneralSettingsResource& resource)
+		wxEnumProperty* BioPropertiesUtils::createEnumProperty(int index, wxPropertyGridPage& page
+																								, BioControlResource<USettingInfoItem>& resource)
 		{
 			bool flag(false);
 			USettingInfoItem item = resource.get(index, flag);
@@ -30,12 +29,13 @@ namespace SmartBio
 				wxEnumProperty* prop = new wxEnumProperty(item.text(), wxPG_LABEL);
 				prop->SetHelpString(item.hint());
 				page.Append(prop);
+
+				return prop;
 			}
 		}
 
-		void BioPropertiesUtils::createBoolProperty( wxPropertyGridPage& page
-			                                         , UIBioSettings index
-			                                         , BioGeneralSettingsResource& resource)
+		wxBoolProperty* BioPropertiesUtils::createBoolProperty(int index, wxPropertyGridPage& page
+																							 , BioControlResource<USettingInfoItem>& resource)
 		{
 			bool flag(false);
 			USettingInfoItem item = resource.get(index, flag);
@@ -46,8 +46,54 @@ namespace SmartBio
 				prop->SetEditor(wxPGEditor_CheckBox);
 				prop->SetHelpString(item.hint());
 				page.Append(prop);
+				return prop;
+
 			}
 		}
+
+
+
+
+
+
+
+		wxPropertyCategory* BioPropertiesUtils::createPropertyCategory(int index, wxPropertyGridPage& page
+			, BioControlResource<USettingInfoItem>& resource)
+		{
+			bool flag(false);
+			USettingInfoItem item = resource.get(index, flag);
+
+			if (flag)
+			{
+				wxPropertyCategory* prop = new wxPropertyCategory(item.text(), wxPG_LABEL);
+				//prop->SetEditor(wxPGEditor_CheckBox);
+				prop->SetHelpString(item.hint());
+				page.Append(prop);
+				return prop;
+
+			}
+		}
+
+
+
+
+		wxEnumProperty* BioPropertiesUtils::createEnumPropertyC(int index, wxPropertyGridPage& page
+			, BioControlResource<USettingInfoItem>& resource)
+		{
+			bool flag(false);
+			USettingInfoItem item = resource.get(index, flag);
+
+			if (flag)
+			{
+				wxEnumProperty* prop = new wxEnumProperty(item.text(), wxPG_LABEL);
+				prop->SetHelpString(item.hint());
+				page.Append(prop);
+
+				return prop;
+			}
+		}
+
+
 
 
 	}

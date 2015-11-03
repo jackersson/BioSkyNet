@@ -21,6 +21,7 @@ namespace SmartBio
 		void BioMainMenuResource::do_initialize()
 		{			
 			std::string mfile = "File";
+			std::string medit = "Edit";
 			std::string mview = "View";
 			std::string mhelp = "Help";
 
@@ -34,13 +35,14 @@ namespace SmartBio
 			std::string moutput_window = "Output window";
 
 			View::UInfoMenuItem file(mfile, "", "", "");
+			View::UInfoMenuItem edit(medit, "", "", "");
 			View::UInfoMenuItem view(mview, "", "", "");
 			View::UInfoMenuItem help(mhelp, "", "", "");
-			View::UInfoMenuItem exit(mexit, "", mexit_icon, mexit_hotkey);
+			View::UInfoMenuItem exit(mexit, "", "resources\\main_menu\\exit.png", mexit_hotkey);
 
 			View::UInfoMenuItem toolbar(mtoolbar, "", "", "");
 			View::UInfoMenuItem settings(msettings, "", "", "");
-			View::UInfoMenuItem about(mabout, "", "", "");
+			View::UInfoMenuItem about(mabout, "", "resources\\main_menu\\about.png", "");
 			View::UInfoMenuItem output_window(moutput_window, "", "", "");
 
 			file.add(UIMainMenu::ID_EXIT, exit);
@@ -50,7 +52,8 @@ namespace SmartBio
 
 			help.add(UIMainMenu::ID_ABOUT, about);
 
-			insert(UIMainMenu::ID_FILE, file);
+			insert(UIMainMenu::ID_FILE, file); 
+			insert(UIMainMenu::ID_EDIT, edit);
 			insert(UIMainMenu::ID_VIEW, view);
 			insert(UIMainMenu::ID_HELP, help);
 		}

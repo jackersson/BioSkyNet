@@ -13,44 +13,146 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Header Files\data_holders">
+      <UniqueIdentifier>{7e9c54fe-374a-4e4c-a5b0-2bfe05a62a4e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data_holders\person">
+      <UniqueIdentifier>{70e19de6-b096-4a52-88ab-dd44b130dd17}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data_holders\visitor">
+      <UniqueIdentifier>{888cbcbb-5606-47fa-8295-34c4b108f64e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data_holders\location">
+      <UniqueIdentifier>{940f5bbc-6ca1-4bb5-9e93-2625402019ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data_holders\bio_photo">
+      <UniqueIdentifier>{8731ab5f-05a1-4648-a750-94799cbd210e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\data_holders\logger">
+      <UniqueIdentifier>{eddb3af5-ee86-49e4-9857-d08a8080c564}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\person">
+      <UniqueIdentifier>{13a71a16-982f-462c-ab84-11ac28b1d651}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\visitor">
+      <UniqueIdentifier>{a68e8f6e-1cf0-461e-854e-10a04423d035}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\location">
+      <UniqueIdentifier>{1cece7f6-d235-4e09-b217-baea9af88557}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\bio_photo">
+      <UniqueIdentifier>{846aaef2-d270-471b-87a9-cf57c895baee}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\logger">
+      <UniqueIdentifier>{c55eaa64-4e00-4d70-8d0c-541722063ec1}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="bio_person.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_person_binder.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_person_db_io.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="database_logger.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="bio_person.cpp">
+      <Filter>Source Files\person</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_person_binder.cpp">
+      <Filter>Source Files\person</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_person_db_io.cpp">
+      <Filter>Source Files\person</Filter>
+    </ClCompile>
+    <ClCompile Include="database_logger.cpp">
+      <Filter>Source Files\logger</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_visitors.cpp">
+      <Filter>Source Files\visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_visitor_binder.cpp">
+      <Filter>Source Files\visitor</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_location.cpp">
+      <Filter>Source Files\location</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_location_binder.cpp">
+      <Filter>Source Files\location</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_photo_item.cpp">
+      <Filter>Source Files\bio_photo</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_photo_item_binder.cpp">
+      <Filter>Source Files\bio_photo</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_db_io.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_person_table.cpp">
+      <Filter>Source Files\person</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_location_table.cpp">
+      <Filter>Source Files\location</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_photo_item_table.cpp">
+      <Filter>Source Files\bio_photo</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_visitor_table.cpp">
+      <Filter>Source Files\visitor</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="bio_person.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_person_binder.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_person_db_io.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="database_logger.hpp">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="idatabase_io.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_person.hpp">
+      <Filter>Header Files\data_holders\person</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_person_binder.hpp">
+      <Filter>Header Files\data_holders\person</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_person_db_io.hpp">
+      <Filter>Header Files\data_holders\person</Filter>
+    </ClInclude>
+    <ClInclude Include="database_logger.hpp">
+      <Filter>Header Files\data_holders\logger</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_visitors.hpp">
+      <Filter>Header Files\data_holders\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_visitor_binder.hpp">
+      <Filter>Header Files\data_holders\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_location.hpp">
+      <Filter>Header Files\data_holders\location</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_location_binder.hpp">
+      <Filter>Header Files\data_holders\location</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_photo_item.hpp">
+      <Filter>Header Files\data_holders\bio_photo</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_photo_item_binder.hpp">
+      <Filter>Header Files\data_holders\bio_photo</Filter>
+    </ClInclude>
+    <ClInclude Include="itable_query.hpp">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_person_table.hpp">
+      <Filter>Header Files\data_holders\person</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_photo_item_table.hpp">
+      <Filter>Header Files\data_holders\bio_photo</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_location_table.hpp">
+      <Filter>Header Files\data_holders\location</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_visitor_table.hpp">
+      <Filter>Header Files\data_holders\visitor</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_db_io.hpp">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

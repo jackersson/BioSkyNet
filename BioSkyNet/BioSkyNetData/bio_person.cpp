@@ -12,8 +12,12 @@ namespace SmartBio
 			                     , country_("")
 			                     , city_("")
 			                     , comments_("")
-													 , photo_path_("")
+													 , avatar_("")
 													 , index_(0)
+													 , bio_photo_indexs_("")
+													 , email_("")
+													 , rights_(Rights::Operator)
+
 
 		{
 
@@ -22,11 +26,14 @@ namespace SmartBio
 			                  , const std::string&    first_name
 			                  , const std::string&    last_name
 			                  , const Poco::DateTime& date_of_birth
-			                  , Gender         gender
-			                  , const std::string&   country
+			                  , Gender                gender
+			                  , const std::string&    country
 			                  , const std::string&    city
 			                  , const std::string&    comments
-			                  , const std::string&    photo_path)
+			                  , const std::string&    avatar
+												, const std::string&    bio_photo_indexs
+												, const std::string&    email
+												, Rights                rights)
 												: index_(index)
 												, first_name_(first_name)
 			                  , last_name_(last_name)
@@ -35,7 +42,10 @@ namespace SmartBio
 			                  , country_(country)
 			                  , city_(city)
 			                  , comments_(comments)
-			                  , photo_path_(photo_path)
+			                  , avatar_(avatar)
+												, bio_photo_indexs_(bio_photo_indexs)
+												, email_(email)
+												, rights_(rights)
 		{
 
 		}
@@ -68,9 +78,24 @@ namespace SmartBio
 			return city_;
 		}
 
-		const std::string& BioPerson::photoPath() const
+		const std::string& BioPerson::avatar() const
 		{
-			return photo_path_;
+			return avatar_;
+		}
+
+		const std::string& BioPerson::bioPhotoIndexs() const
+		{
+			return bio_photo_indexs_;
+		}
+
+		const std::string& BioPerson::email() const
+		{
+			return email_;
+		}
+
+		Rights BioPerson::rights() const
+		{
+			return rights_;
 		}
 
 		const std::string& BioPerson::comments() const
@@ -123,9 +148,24 @@ namespace SmartBio
 			comments_ = comments;
 		}
 
-		void BioPerson::setPhotoPath(const std::string& photo_path)
+		void BioPerson::setAvatar(const std::string& avatar)
 		{
-			photo_path_ = photo_path;
+			avatar_ = avatar;
+		}
+
+		void BioPerson::setBioPhotoIndexs(const std::string& bio_photo_indexs)
+		{
+			bio_photo_indexs_ = bio_photo_indexs;
+		}
+
+		void BioPerson::setEmail(const std::string& email)
+		{
+			email_ = email;
+		}
+
+		void BioPerson::setRights(Rights rights)
+		{
+			rights_ = rights;
 		}
 
 		void BioPerson::setIndex(int index)

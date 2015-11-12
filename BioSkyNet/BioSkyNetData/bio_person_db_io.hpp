@@ -1,3 +1,4 @@
+/*
 #ifndef BioPerson_DB_IO_INCLUDED
 #define BioPerson_DB_IO_INCLUDED
 
@@ -9,12 +10,12 @@ namespace SmartBio
 	namespace Data
 	{
 		typedef SmartBio::Data::BioPerson PersonType;
-		class BioPersonDbIO : public SmartBio::Interfaces::IDatabaseIO<PersonType>
+		class BioDbIO : public SmartBio::Interfaces::IDatabaseIO<PersonType>
 		{
 		public:
 
-			BioPersonDbIO(std::string connection_string);
-			~BioPersonDbIO();
+			BioDbIO(std::string connection_string);
+			~BioDbIO();
 
 			
 			bool write( BioPerson& data             );
@@ -27,7 +28,7 @@ namespace SmartBio
 
 			const std::string& bioPersonInsert()
 			{
-				static  std::string query("INSERT INTO bio_subjects VALUES( :id, :fn, :ln, :db, :gn, :cn, :ct, :cm, :ph )");
+				static  std::string query("INSERT INTO bio_subjects VALUES( :id, :fn, :ln, :db, :gn, :cn, :ct, :av, :bpi, :em, :cm, :rgt )");
 				return query;
 			}
 
@@ -54,4 +55,4 @@ namespace SmartBio
 	}
 }
 
-#endif
+#endif*/

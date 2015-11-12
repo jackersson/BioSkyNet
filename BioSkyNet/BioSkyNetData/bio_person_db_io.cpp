@@ -1,3 +1,4 @@
+/*
 #include "stdafx.h"
 #include "bio_person_db_io.hpp"
 
@@ -7,14 +8,14 @@ namespace SmartBio
 {
 	namespace Data
 	{		
-		BioPersonDbIO::BioPersonDbIO( std::string connection_string) 
+		BioDbIO::BioDbIO( std::string connection_string) 
 		                            : connection_string_(connection_string)	
 		{			
 		  initialize();
 			std::cout << "constructed" << std::endl;
 		}
 
-		void BioPersonDbIO::initialize()
+		void BioDbIO::initialize()
 		{
 			try
 			{
@@ -30,8 +31,11 @@ namespace SmartBio
 				query.push_back(" , Gender tinyint NOT NULL");
 				query.push_back(" , Country ntext NOT NULL");
 				query.push_back(" , City ntext NOT NULL");
-				query.push_back(" , Photo ntext NOT NULL");
+				query.push_back(" , Avatar ntext NOT NULL");
+				query.push_back(" , BioPhotoIndexs ntext NOT NULL");
+				query.push_back(" , Email ntext NOT NULL");
 				query.push_back(" , Comment ntext NOT NULL");
+				query.push_back(" , Rights tinyint NOT NULL");
 				query.push_back(" );");
 				
 				std::string qcreate_table_ = Poco::cat(std::string(""), query.begin(), query.end());
@@ -50,13 +54,13 @@ namespace SmartBio
 			}
 		}
 
-		BioPersonDbIO::~BioPersonDbIO()
+		BioDbIO::~BioDbIO()
 		{
 
 		}
 
 
-		bool BioPersonDbIO::write(std::vector<PersonType>& data)
+		bool BioDbIO::write(std::vector<PersonType>& data)
 		{
 			try
 			{
@@ -86,7 +90,7 @@ namespace SmartBio
 			return false;
 		}
 		
-		bool BioPersonDbIO::read(std::vector<BioPerson>& data, std::string query)
+		bool BioDbIO::read(std::vector<BioPerson>& data, std::string query)
 		{
 			try
 			{
@@ -111,7 +115,7 @@ namespace SmartBio
 			return false;
 		}
 
-		bool BioPersonDbIO::write( BioPerson& data )
+		bool BioDbIO::write( BioPerson& data )
 		{
 			try
 			{
@@ -119,17 +123,20 @@ namespace SmartBio
 				
 				int unique(0);
 
-				tmp << bioPersonUnique(), into(unique), now;
-				++unique;
-				++unique;
+				std::string sql = bioPersonUnique();
+				std::cout << sql << std::endl;
+
+				tmp << sql, into(unique), now;				
 				data.setIndex(++unique);	
 
-				Poco::Data::Statement stmt((tmp << bioPersonInsert(), use(data), now));
+				sql = bioPersonInsert();
+				std::cout << sql << std::endl;
 
-				/*Poco::Data::Statement::Result result = */stmt.execute();
+				Poco::Data::Statement stmt((tmp << sql, use(data), now));
 
-				/*result.wait();*/
+				Poco::Data::Statement::Result result = stmt.executeAsync();
 
+				result.wait();
 
 				return true;
 			}
@@ -144,3 +151,4 @@ namespace SmartBio
 	}
 }
 
+*/

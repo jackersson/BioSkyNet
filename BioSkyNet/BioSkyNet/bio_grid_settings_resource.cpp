@@ -20,13 +20,13 @@ namespace SmartBio
 			UInfoItem general_settings	("General settings" , "", "resources\\settings\\general.png"					, "");
 			UInfoItem face_settings			("Face settings"		, "", "resources\\settings\\face.png"							, "");
 			UInfoItem search_settings		("Search settings"	, "", "resources\\settings\\search.png"						, "");
-			UInfoItem face_information	("Face Information"	, "", "resources\\settings\\face_information.png"	, "");
+			
 			
 			insert(UIResources_::ID_DEVICE_SETTINGS	  , device_settings  );
 			insert(UIResources_::ID_GENERAL_SETTINGS  , general_settings );
 			insert(UIResources_::ID_FACE_SETTINGS		  , face_settings    );
 			insert(UIResources_::ID_SEARCH_SETTINGS	  , search_settings  );
-			insert(UIResources_::ID_FACE_INFORMATION	, face_information );
+	
 		}
 	}
 }

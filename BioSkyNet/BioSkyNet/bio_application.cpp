@@ -16,7 +16,7 @@ namespace SmartBio { namespace View
 		{
 			//Poco::SharedPtr<BioModel> model = BioModel::instance();
 			wxImage::AddHandler(new wxPNGHandler);
-
+			wxImage::AddHandler(new wxBMPHandler);
 			Poco::SharedPtr<BioView> view = BioView::instance( NULL );
 
 			view->setTopWindow( *this );	

@@ -12,8 +12,8 @@
 
 #include "main_bio_page.hpp"
 
-//#include "sample.xpm"
 #include "bio_form_resources.hpp"
+#include "bio_application_resource.hpp"
 
 #include "uapp_info_item.hpp"
 
@@ -24,6 +24,8 @@
 #include "bio_journal_page.hpp"
 
 #include <memory>
+
+#include "Poco/AutoPtr.h"
 
 namespace SmartBio { namespace View
 {
@@ -91,6 +93,28 @@ namespace SmartBio { namespace View
 		return ctrl;
 	}
 
+	void BioForm::onCreatePersonTabNotification(const Poco::AutoPtr<CreatePersonTabNotification>& notif)
+	{
+		MainBioPage*  bio_page = new MainBioPage(this, wxID_ANY);
+			
+		if (!notif->isDefault())
+		{
+			Data::BioPerson data = notif->person();
+			tab_controller_->AddPage(bio_page, data.firstName() + " " + data.lastName(), true, wxArtProvider::GetBitmap(wxART_OTHER));
+			
+			bio_page->updatePerson(data);
+		}
+		else
+		{
+			tab_controller_->AddPage(bio_page, "Add New User", true, wxArtProvider::GetBitmap(wxART_OTHER));
+			bio_page->updatePerson(true);
+		}
+
+
+
+			
+	}
+
 	void BioForm::create()
 	{
 
@@ -103,16 +127,16 @@ namespace SmartBio { namespace View
 
 		frame_manager_.SetManagedWindow(this);
 
-		frame_manager_.AddPane(logg_control_, wxAuiPaneInfo().Bottom().Name(wxT("Help")).Caption(_("Help Window")));
+		frame_manager_.AddPane(logg_control_, wxAuiPaneInfo().Bottom().Caption(_("Help Window")));
 		
 		wxSize client_size = GetClientSize();
 		long m_notebook_style;
 		m_notebook_style = wxAUI_NB_DEFAULT_STYLE | wxAUI_NB_TAB_EXTERNAL_MOVE | wxNO_BORDER;
 
-		TabController* tb = new TabController( this, wxID_ANY
-			                                   , wxPoint(client_size.x, client_size.y)
-			                                   , wxSize(430, 200)
-			                                   , m_notebook_style);
+		tab_controller_ = new TabController( this, wxID_ANY
+			                    , wxPoint(client_size.x, client_size.y)
+			                    , wxSize(430, 200)
+			                    , m_notebook_style);
 		//tb->Freeze();
 		wxBitmap page_bmp = wxArtProvider::GetBitmap(wxART_NORMAL_FILE, wxART_OTHER, wxSize(16, 16));
 
@@ -122,20 +146,25 @@ namespace SmartBio { namespace View
 		//tb->AddPage(start_page, "test", true, page_bmp);
 		//tb->Thaw();
 
-		MainBioPage*   bio_page = new MainBioPage(this, wxID_ANY);
-		tb->AddPage(bio_page, "User Data", true, page_bmp);
+		/*MainBioPage*   bio_page = new MainBioPage(this, wxID_ANY);
+		tab_controller_->AddPage(bio_page, "User Data", true, page_bmp);
+		*/
 		//tb->Thaw();
 
 		BioUsersPage*   bio_users_page = new BioUsersPage(this, wxID_ANY);
-		tb->AddPage(bio_users_page, "Users List", false, page_bmp);
+		tab_controller_->AddPage(bio_users_page, "Users List", false, page_bmp);
+
+		Poco::NObserver<BioForm, CreatePersonTabNotification> observer(*this, &BioForm::onCreatePersonTabNotification);
+		bio_users_page->addObserver(observer);
+
 
 		BioSurveillancePage*   bio_surveillance_page = new BioSurveillancePage(this, wxID_ANY);
-		tb->AddPage(bio_surveillance_page, "Video Surveillance", false, page_bmp);
+		tab_controller_->AddPage(bio_surveillance_page, "Video Surveillance", false, page_bmp);
 
 		BioJournalPage*   bio_journal_page = new BioJournalPage(this, wxID_ANY);
-		tb->AddPage(bio_journal_page, "Journal", false, page_bmp);
+		tab_controller_->AddPage(bio_journal_page, "Journal", false, page_bmp);
 
-		frame_manager_.AddPane(tb, wxAuiPaneInfo().CenterPane());
+		frame_manager_.AddPane(tab_controller_, wxAuiPaneInfo().CenterPane());
 
 		BioToolBar* toolbar = new BioToolBar( this, UIResources::ID_TOOLBAR_MAIN, wxDefaultPosition, wxDefaultSize
 			                                  , wxAUI_TB_DEFAULT_STYLE | wxAUI_TB_OVERFLOW | wxAUI_TB_VERTICAL );
@@ -164,22 +193,36 @@ namespace SmartBio { namespace View
 
 		//boxSizer393->Add(settings, 1, wxALL | wxEXPAND, 5);
 
-		frame_manager_.AddPane(settings, wxAuiPaneInfo().
-			Name(wxT("test10")).Caption(wxT("Text Pane with Hide Prompt")).
-			Right().Icon(wxArtProvider::GetBitmap(wxART_WARNING,
-			wxART_OTHER,
-			wxSize(16, 16))));
-
-
 		std::unique_ptr<BioFormResource> resource(new BioFormResource());
+
+		bool flag;
+		UInfoItem stgs = resource->get(UIResources::ID_SETTINGS_TAB, flag);
+		if (flag)
+		{
+
+			frame_manager_.AddPane(settings, wxAuiPaneInfo().Caption(stgs.text())
+				.Right());
+		}
+
+		
 		
 		this->Layout();
 
-		bool flag;
-		UAppInfoItem app = resource->get(UIResources::ID_APPLICATION, flag);
+		std::unique_ptr<BioApplicationResource> resource_app(new BioApplicationResource());
+
+
+		UAppInfoItem app = resource_app->get(UIResources::ID_APPLICATION, flag);
 		if (flag)
 		{			
-			SetIcon ( app.icon());
+
+			//wxIconBundle * icons = new wxIconBundle(wxIcon("resources\\logo_32x32.xpm"));
+			//icons->AddIcon(wxIcon("resources\\logo_32x32.xpm"));
+			//wxIcon image;
+			//if (image.LoadFile("resources\\logo_32x32.xpm"))
+				//SetIcon(image)/*app.icon()*/;
+			//SetIcon(wxIcon(sample_xpm));
+			SetIcon(wxIcon(app.icon()));
+			
 			SetTitle( app.text());
 		}
 

@@ -9,6 +9,8 @@ namespace SmartBio
 {
 	namespace View
 	{
+
+		
 		class BioJournalPage : public TabPage
 		{
 
@@ -32,6 +34,21 @@ namespace SmartBio
 			wxDataViewListCtrl*  users_list_            ;	
 			wxBitmapButton*      btn_journal_delete_    ;
 			wxBitmapButton*      btn_journal_delete_all_;
+
+			
+			wxDataViewColumn*    person_                ; 
+			wxDataViewColumn*    location_              ; 
+			wxDataViewColumn*    time_                  ; 
+			wxDataViewColumn*    photo_                 ; 
+			wxDataViewColumn*    full_photo_            ; 
+			wxDataViewColumn*	   status_                ; 
+			wxDataViewColumn*	   detected_face_count_   ; 
+
+			//TODO add wx_bio_face_view streamer to see the photo_
+
+			//TODO make context menu;
+			//Open Person
+			//Delete Record
 		};
 	}
 }

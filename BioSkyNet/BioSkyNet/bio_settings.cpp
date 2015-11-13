@@ -64,9 +64,11 @@ namespace SmartBio
 			wxBoxSizer* main_sizer = new wxBoxSizer(wxVERTICAL);
 			this->SetSizer(main_sizer);			
 
-			BioGridSettings* settings = new BioGridSettings( this, wxID_ANY, wxDefaultPosition, wxSize(-1, -1)
+			BioGridSettings* settings = new BioGridSettings( this, wxID_ANY, wxDefaultPosition, wxSize(100, 100)
 				                                             , wxPG_TOOLBAR | wxPG_DESCRIPTION 
 																										 | wxPG_SPLITTER_AUTO_CENTER | wxPG_BOLD_MODIFIED);
+
+			settings->Init();
 
 			main_sizer->Add(settings, 7, wxALL | wxEXPAND, 5);
 
@@ -74,9 +76,9 @@ namespace SmartBio
 			main_sizer->Add(tools_sizer, 1, wxALL | wxEXPAND, 5);
 
 			
-			btn_apply_							= utils.addButton(ID_SETTINGS_BTN_APPLY						, this, *resource, tools_sizer);
-			btn_ok_									= utils.addButton(ID_SETTINGS_BTN_OK							, this, *resource, tools_sizer);
-			btn_reset_to_default_		= utils.addButton(ID_SETTINGS_BTN_RESET_TO_DEFAULT, this, *resource, tools_sizer);
+			btn_apply_							= utils.addButton(ID_SETTINGS_BTN_APPLY						, this, *resource, tools_sizer, 0);
+			btn_ok_									= utils.addButton(ID_SETTINGS_BTN_OK							, this, *resource, tools_sizer, 0);
+			btn_reset_to_default_		= utils.addButton(ID_SETTINGS_BTN_RESET_TO_DEFAULT, this, *resource, tools_sizer, 0);
 						
 
 			this->Layout();

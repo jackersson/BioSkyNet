@@ -24,13 +24,22 @@ namespace SmartBio
 			Poco::SharedPtr<BioSearchSettingsResource> resource(new BioSearchSettingsResource());
 			BioPropertiesUtils utils;
 
+		
+			//wxPropertyCategory()
+			category_person_information_ = utils.createProperty<wxPropertyCategory, USettingInfoItem>(ID_SEARCH_SETTINGS_PERSON_INFORMATION, *this, *resource);
+
+			property_date_from_ = utils.createProperty<wxEnumProperty, USettingInfoItem>(ID_SEARCH_SETTINGS_DATE_FROM, *this, *resource);
+
+
+
 			//TODO test view 
+/*
 			category_person_information_ = new wxPropertyCategory("test1", wxPG_LABEL);//utils.createPropertyCategory(ID_SEARCH_SETTINGS_PERSON_INFORMATION, *this, *resource);
 			Append(category_person_information_);
 			property_date_from_ =  new wxEnumProperty("test12", wxPG_LABEL);
 			AppendIn(category_person_information_, property_date_from_);
 			property_date_to_ = new wxEnumProperty("test13", wxPG_LABEL); //utils.createEnumPropertyC(ID_SEARCH_SETTINGS_DATE_TO, *this, *resource);
-			AppendIn(category_person_information_, property_date_to_);
+			AppendIn(category_person_information_, property_date_to_);*/
 			//firs_name_ = utils.createEnumProperty(ID_SEARCH_SETTINGS_FIRST_NAME, *this, *resource);
 			//last_name_ = utils.createEnumProperty(ID_SEARCH_SETTINGS_LAST_NAME, *this, *resource);
 		/*	today_										= utils.createEnumPropertyC	(ID_SEARCH_SETTINGS_TODAY									, *this, *resource);

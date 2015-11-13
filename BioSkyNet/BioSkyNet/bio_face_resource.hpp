@@ -8,7 +8,6 @@ namespace SmartBio
 {
 	namespace View
 	{
-
 		class BioFaceResource : public BioControlResource <UInfoItem>
 		{
 		public:
@@ -20,7 +19,6 @@ namespace SmartBio
 			void do_initialize();
 
 		};
-
 	}
 }
 

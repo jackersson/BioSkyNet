@@ -26,17 +26,11 @@ namespace SmartBio
 			std::string hint       () const;
 			std::string hotKey     () const;		
 
-	/*		wxIcon   icon  ();
-			wxBitmap bitmap();*/
-
-		/*private:
-			wxBitmap loadBitmap(std::string const& filename);
-			wxIcon   loadIcon  (std::string const& filename);*/
 		private:
 			std::string hot_key_      ;
 			std::string text_         ;
 			std::string hint_         ;	
-		/*	std::string icon_filename_;*/
+
 		};
 	}
 }

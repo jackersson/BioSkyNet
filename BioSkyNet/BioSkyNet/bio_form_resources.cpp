@@ -1,8 +1,9 @@
 #include "stdafx.h"
 #include "bio_form_resources.hpp"
+//#include "resources/logo.xpm"
 
 #include "bio_resources.hpp"
-#include "uapp_info_item.hpp"
+#include "uinfo_item.hpp"
 
 namespace SmartBio
 {
@@ -16,15 +17,14 @@ namespace SmartBio
 
 		void BioFormResource::do_initialize()
 		{			
-			std::string app_name    = "Smart Biometrics";
-			std::string app_version = "v0.1";
-			std::string app_website = "http://bioskynet.com";
-			std::string app_icon    = "resources\\logo.png";
-			std::string app_hint    = "Smart Biometrics v0.1";
 
-			UAppInfoItem app(app_name, app_hint, app_icon, "", app_website, app_version);
 
-			insert(UIResources::ID_APPLICATION, app);		
+
+			UInfoItem settings("Settings", "", "resources\\setting.png", "");
+
+
+			insert(UIResources::ID_SETTINGS_TAB   , settings);
+
 		}
 
 	}

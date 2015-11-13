@@ -42,18 +42,9 @@ namespace SmartBio { namespace View
 		Poco::SharedPtr<TabController> tab_control_;
 		/*Poco::SharedPtr<LogControl>    log_control_;*/
 		void subscribe();
-
-
-
-	private:
-		//std::vector<TabPage*> tab_pages_;
-
+		
 	private:			
-
-		 
 		void do_initialize() final;
-
-
 	};
 
 } }

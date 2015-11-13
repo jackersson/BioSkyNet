@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "uapp_info_item.hpp"
 
+#include "resources/logo.xpm"
+
 namespace SmartBio
 {
 	namespace View
@@ -33,5 +35,10 @@ namespace SmartBio
 		{
 		 return website_;
 		}		
+
+		wxIcon UAppInfoItem::icon()
+		{
+			return wxIcon(logo);
+		}
 	}
 }

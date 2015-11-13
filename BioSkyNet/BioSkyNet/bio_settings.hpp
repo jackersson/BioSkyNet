@@ -29,9 +29,9 @@ namespace SmartBio
 			void BioSettings::onBtnResetToDefaultClick(wxCommandEvent& e);
 
 		private: 
-			void do_create();
-			void do_subscribe();
-			void do_unsubscribe();	
+			void do_create      ();
+			void do_subscribe   ();
+			void do_unsubscribe ();	
 		};
 	}
 }

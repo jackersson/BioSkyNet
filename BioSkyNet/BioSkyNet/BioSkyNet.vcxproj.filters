@@ -55,6 +55,60 @@
     <Filter Include="Source Files\settings">
       <UniqueIdentifier>{d5e5daf4-d7b8-4292-976e-04eb09dc701a}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\biometric_view">
+      <UniqueIdentifier>{93564e4c-3b73-4cd0-80f7-5b47755e5c58}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\biometric_view">
+      <UniqueIdentifier>{cf426379-418e-4eff-9a33-50a41e64ddd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\base">
+      <UniqueIdentifier>{81d4fa56-fed9-4532-98a3-7bd0871ab423}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\application">
+      <UniqueIdentifier>{b010a97c-f3ff-496f-ba1b-00713ae8e7a5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\form">
+      <UniqueIdentifier>{60331a95-9bb9-44b0-b1fe-a4eb793ad5e3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\base">
+      <UniqueIdentifier>{5adb7add-001f-46d7-920d-88ecb6772ac8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\form">
+      <UniqueIdentifier>{91abbf19-d972-45ca-8b43-1dc561ed3184}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\application">
+      <UniqueIdentifier>{b99786ac-2284-478d-b528-b8425e28e787}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\profile_pages">
+      <UniqueIdentifier>{66268bcc-7a63-4574-9d27-d82c6c64609a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\journal">
+      <UniqueIdentifier>{04f84e13-5538-4cac-a3d0-504275921291}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\survaillance">
+      <UniqueIdentifier>{39124667-22c6-41e0-a984-59296a13e52c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\settings">
+      <UniqueIdentifier>{1ce2f477-4fb6-48d3-a0bd-59dd763a4cb2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\resources\users">
+      <UniqueIdentifier>{4e3119e8-e88c-4716-bd2b-3e0ccc1737e5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\journal">
+      <UniqueIdentifier>{eecbafd8-d224-4e16-a136-fc300ebc1110}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\settings">
+      <UniqueIdentifier>{834fa7f8-cfaf-4181-9d59-73bc6a8fb5c9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\users">
+      <UniqueIdentifier>{c7fa3167-1b08-4615-a247-f4ec9ccf40dd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\locations">
+      <UniqueIdentifier>{d6108ac1-8ed6-440b-b839-51ed8c9d1a1c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Header Files\resources\profile">
+      <UniqueIdentifier>{b0ad8bce-815c-480f-a20b-44b7d447d6b3}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="bio_form.cpp">
@@ -69,32 +123,8 @@
     <ClCompile Include="bio_view.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="bio_control_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_form_resources.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_general_settings_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_main_menu_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_toolbar_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_face_settings.cpp">
-      <Filter>Source Files\settings</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_general_settings.cpp">
-      <Filter>Source Files\settings</Filter>
-    </ClCompile>
     <ClCompile Include="bio_toolbar.cpp">
       <Filter>Source Files\main_controls</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_info_resource.cpp">
-      <Filter>Source Files\resources</Filter>
     </ClCompile>
     <ClCompile Include="bio_listbook_utils.cpp">
       <Filter>Source Files\utils</Filter>
@@ -135,17 +165,11 @@
     <ClCompile Include="usettings_info_item.cpp">
       <Filter>Source Files\common_items</Filter>
     </ClCompile>
-    <ClCompile Include="bio_profile_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
     <ClCompile Include="bio_users_page.cpp">
       <Filter>Source Files\main_pages</Filter>
     </ClCompile>
     <ClCompile Include="bio_face_page.cpp">
       <Filter>Source Files\main_pages</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_face_resource.cpp">
-      <Filter>Source Files\resources</Filter>
     </ClCompile>
     <ClCompile Include="bio_surveillance_page.cpp">
       <Filter>Source Files\main_pages</Filter>
@@ -153,53 +177,83 @@
     <ClCompile Include="bio_journal_page.cpp">
       <Filter>Source Files\main_pages</Filter>
     </ClCompile>
-    <ClCompile Include="bio_surveillance_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_location_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
     <ClCompile Include="bio_location_view.cpp">
       <Filter>Source Files\main_controls</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_journal_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_users_resource.cpp">
-      <Filter>Source Files\resources</Filter>
     </ClCompile>
     <ClCompile Include="bio_grid_settings.cpp">
       <Filter>Source Files\settings</Filter>
     </ClCompile>
-    <ClCompile Include="bio_device_settings.cpp">
-      <Filter>Source Files\settings</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_device_settings_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_face_settings_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_face_information_settings_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_face_information_settings.cpp">
-      <Filter>Source Files\settings</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_search_settings_resource.cpp">
-      <Filter>Source Files\resources</Filter>
-    </ClCompile>
     <ClCompile Include="bio_search_settings.cpp">
       <Filter>Source Files\settings</Filter>
-    </ClCompile>
-    <ClCompile Include="bio_settings_resource.cpp">
-      <Filter>Source Files\resources</Filter>
     </ClCompile>
     <ClCompile Include="bio_grid_settings_resource.cpp">
       <Filter>Source Files\resources</Filter>
     </ClCompile>
     <ClCompile Include="common_utils.cpp">
       <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_location_settings.cpp">
+      <Filter>Source Files\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_properties.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
+    <ClCompile Include="wx_bio_face_streamer.cpp">
+      <Filter>Source Files\biometric_view</Filter>
+    </ClCompile>
+    <ClCompile Include="wx_bio_face_view.cpp">
+      <Filter>Source Files\biometric_view</Filter>
+    </ClCompile>
+    <ClCompile Include="wx_bio_view.cpp">
+      <Filter>Source Files\biometric_view</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_application_resource.cpp">
+      <Filter>Source Files\resources\application</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_control_resource.cpp">
+      <Filter>Source Files\resources\base</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_form_resources.cpp">
+      <Filter>Source Files\resources\form</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_main_menu_resource.cpp">
+      <Filter>Source Files\resources\form</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_face_resource.cpp">
+      <Filter>Source Files\resources\profile_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_info_resource.cpp">
+      <Filter>Source Files\resources\profile_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_journal_resource.cpp">
+      <Filter>Source Files\resources\journal</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_location_resource.cpp">
+      <Filter>Source Files\resources\survaillance</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_location_settings_resource.cpp">
+      <Filter>Source Files\resources\survaillance</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_personal_resource.cpp">
+      <Filter>Source Files\resources\base</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_profile_resource.cpp">
+      <Filter>Source Files\resources\profile_pages</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_search_settings_resource.cpp">
+      <Filter>Source Files\resources\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_settings_resource.cpp">
+      <Filter>Source Files\resources\settings</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_surveillance_resource.cpp">
+      <Filter>Source Files\resources\survaillance</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_toolbar_resource.cpp">
+      <Filter>Source Files\resources\form</Filter>
+    </ClCompile>
+    <ClCompile Include="bio_users_resource.cpp">
+      <Filter>Source Files\resources\users</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -214,33 +268,6 @@
     </ClInclude>
     <ClInclude Include="bio_view.hpp">
       <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_control_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_form_resources.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_general_settings_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_main_menu_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_toolbar_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_resources.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_info_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_face_settings.hpp">
-      <Filter>Header Files\settings</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_general_settings.hpp">
-      <Filter>Header Files\settings</Filter>
     </ClInclude>
     <ClInclude Include="bio_toolbar.hpp">
       <Filter>Header Files\main_controls</Filter>
@@ -287,17 +314,11 @@
     <ClInclude Include="usettings_info_item.hpp">
       <Filter>Header Files\control_items</Filter>
     </ClInclude>
-    <ClInclude Include="bio_profile_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
     <ClInclude Include="bio_users_page.hpp">
       <Filter>Header Files\main_pages</Filter>
     </ClInclude>
     <ClInclude Include="bio_face_page.hpp">
       <Filter>Header Files\main_pages</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_face_resource.hpp">
-      <Filter>Header Files\resources</Filter>
     </ClInclude>
     <ClInclude Include="bio_surveillance_page.hpp">
       <Filter>Header Files\main_pages</Filter>
@@ -305,55 +326,97 @@
     <ClInclude Include="bio_journal_page.hpp">
       <Filter>Header Files\main_pages</Filter>
     </ClInclude>
-    <ClInclude Include="bio_surveillance_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_location_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
     <ClInclude Include="bio_location_view.hpp">
       <Filter>Header Files\main_controls</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_journal_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_users_resource.hpp">
-      <Filter>Header Files\resources</Filter>
     </ClInclude>
     <ClInclude Include="bio_grid_settings.hpp">
       <Filter>Header Files\settings</Filter>
     </ClInclude>
-    <ClInclude Include="bio_device_settings.hpp">
-      <Filter>Header Files\settings</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_device_settings_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
     <ClInclude Include="iui_subscrible.hpp">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
-    <ClInclude Include="bio_face_settings_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_face_information_settings_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_face_information_settings.hpp">
-      <Filter>Header Files\settings</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_search_settings_resource.hpp">
-      <Filter>Header Files\resources</Filter>
-    </ClInclude>
     <ClInclude Include="bio_search_settings.hpp">
       <Filter>Header Files\settings</Filter>
-    </ClInclude>
-    <ClInclude Include="bio_settings_resource.hpp">
-      <Filter>Header Files\resources</Filter>
     </ClInclude>
     <ClInclude Include="bio_grid_settings_resource.hpp">
       <Filter>Header Files\resources</Filter>
     </ClInclude>
     <ClInclude Include="common_utils.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_location_settings.hpp">
+      <Filter>Header Files\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="ui_notifications.hpp">
+      <Filter>Header Files\common</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_properties.hpp">
+      <Filter>Header Files\utils</Filter>
+    </ClInclude>
+    <ClInclude Include="wx_bio_face_streamer.hpp">
+      <Filter>Header Files\biometric_view</Filter>
+    </ClInclude>
+    <ClInclude Include="wx_bio_face_view.hpp">
+      <Filter>Header Files\biometric_view</Filter>
+    </ClInclude>
+    <ClInclude Include="wx_bio_view.hpp">
+      <Filter>Header Files\biometric_view</Filter>
+    </ClInclude>
+    <ClInclude Include="wx_bio_view_zoom_slider.hpp">
+      <Filter>Header Files\biometric_view</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_control_resource.hpp">
+      <Filter>Header Files\resources\base</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_application_resource.hpp">
+      <Filter>Header Files\resources\application</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_form_resources.hpp">
+      <Filter>Header Files\resources\form</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_resources.hpp">
+      <Filter>Header Files\resources\base</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_main_menu_resource.hpp">
+      <Filter>Header Files\resources\form</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_toolbar_resource.hpp">
+      <Filter>Header Files\resources\form</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_journal_resource.hpp">
+      <Filter>Header Files\resources\journal</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_settings_resource.hpp">
+      <Filter>Header Files\resources\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_search_settings_resource.hpp">
+      <Filter>Header Files\resources\settings</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_location_settings_resource.hpp">
+      <Filter>Header Files\resources\locations</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_location_resource.hpp">
+      <Filter>Header Files\resources\locations</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_personal_resource.hpp">
+      <Filter>Header Files\resources\profile</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_face_resource.hpp">
+      <Filter>Header Files\resources\profile</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_info_resource.hpp">
+      <Filter>Header Files\resources\profile</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_profile_resource.hpp">
+      <Filter>Header Files\resources\profile</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_users_resource.hpp">
+      <Filter>Header Files\resources\users</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_surveillance_resource.hpp">
+      <Filter>Header Files\resources\locations</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_list_model.hpp">
       <Filter>Header Files\utils</Filter>
     </ClInclude>
   </ItemGroup>

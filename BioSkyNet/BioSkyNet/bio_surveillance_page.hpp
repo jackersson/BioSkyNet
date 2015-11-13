@@ -24,9 +24,6 @@ namespace SmartBio
 			void do_create();
 
 		private:
-			
-	
-
 
 		};
 	}

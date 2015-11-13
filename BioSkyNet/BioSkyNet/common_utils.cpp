@@ -24,9 +24,10 @@ namespace SmartBio
 
 			if (flag)
 			{
-				wxCommandLinkButton* btn = new wxCommandLinkButton(parent, wxID_ANY, item.text(), item.hint());
+				wxCommandLinkButton* btn = new wxCommandLinkButton(parent, wxID_ANY, item.text());
+				btn->SetToolTip(item.hint());
 				sizer->Add(btn, 1, 0, 5);
-				return NULL;
+				return btn;
 			}
 			return NULL;
 		}
@@ -42,6 +43,7 @@ namespace SmartBio
 			if (flag)
 			{
 				wxBitmapButton* btn = new wxBitmapButton( parent, wxID_ANY, item.bitmap() );
+				btn->SetToolTip(item.hint() );
 				sizer->Add( btn, 1, style, 5 );
 				return btn;
 			}
@@ -58,7 +60,7 @@ namespace SmartBio
 			if (flag)
 			{
 				wxStaticBitmap* img = new wxStaticBitmap(parent, wxID_ANY, item.bitmap() );
-
+				img->SetToolTip(item.hint());
 				sizer->Add(img, 1, style, 5);
 
 				return img;
@@ -66,16 +68,20 @@ namespace SmartBio
 			return NULL;
 		}
 
-		void CommonUtils::addSettingsPage( int index, wxPropertyGridManager& pages_manager
-			                               , BioControlResource<UInfoItem>& resource, wxPropertyGridPage* page)
+		/*wxPropertyGridPage**/ void CommonUtils::addSettingsPage( int index, wxPropertyGridManager& pages_manager
+			                                              , BioControlResource<UInfoItem>& resource, wxPropertyGridPage* page)
 		{
 			bool result(false);
 			UInfoItem item = resource.get(index, result);
 
 			if (result)
 			{
-				pages_manager.AddPage(item.text(), item.bitmap(), page);
+				/*wxPropertyGridPage* page = */pages_manager.AddPage(item.text(), item.bitmap(), page);
+			/*	return page;*/
 			}
+/*
+
+			return NULL;*/
 		}
 
 		wxStaticText* CommonUtils::addText( int index, wxWindow* parent

@@ -1,7 +1,7 @@
 #ifndef BioGridSettings_Resource_INCLUDED
 #define BioGridSettings_Resource_INCLUDED
 
-#include "usettings_info_item.hpp"
+#include "uinfo_item.hpp"
 #include "bio_control_resource.hpp"
 
 namespace SmartBio

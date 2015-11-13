@@ -25,6 +25,8 @@ namespace SmartBio
 			std::string version() const;			
 			std::string website() const;			
 
+			wxIcon icon();			
+
 		private:
 			std::string version_;
 			std::string website_;

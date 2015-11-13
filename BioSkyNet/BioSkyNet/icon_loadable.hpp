@@ -16,8 +16,8 @@ namespace SmartBio
 
 			virtual ~IconLoadable();
 
-			wxIcon   icon  ();
-			wxBitmap bitmap();
+			virtual wxIcon   icon  ();
+			virtual wxBitmap bitmap();
 
 		private:
 			wxBitmap loadBitmap(std::string const& filename);

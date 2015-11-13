@@ -1,11 +1,15 @@
 #ifndef TAB_PAGE_H_INCLUDED
 #define TAB_PAGE_H_INCLUDED
 
+#include "Poco/NotificationCenter.h"
+
 class TabController;
 
 namespace SmartBio { namespace View
 {
-	class TabPage : public wxScrolledWindow
+	class TabPage :   public wxScrolledWindow
+		              , public Poco::NotificationCenter //TODO check is it necessary
+
 	{
 	public:
 		typedef enum
@@ -14,7 +18,7 @@ namespace SmartBio { namespace View
 			OPEN,
 			ACTIVE
 		} State;
-
+	
 		TabPage ( wxWindow *parent, wxWindowID winid = wxID_ANY );
 
 		virtual ~TabPage();
@@ -43,7 +47,6 @@ namespace SmartBio { namespace View
 		void onSelectPageCallback();
 
 		friend class TabController;
-
 
 	private:
 		virtual void do_create      () = 0;

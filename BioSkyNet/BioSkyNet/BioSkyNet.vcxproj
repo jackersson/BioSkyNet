@@ -112,7 +112,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <PreprocessorDefinitions>WIN32;__WXMSW__;NDEBUG;_WINDOWS;NOPCH;POCO_NO_UNWINDOWS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
-      <AdditionalIncludeDirectories>C:\Poco\Foundation\include;C:\wxWidgets-3.0.2\include\msvc;C:\wxWidgets-3.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Poco\Util\include;C:\Poco\Data\SQLite\include;C:\Poco\Data\include;C:\Poco\Foundation\include;C:\wxWidgets-3.0.2\include\msvc;C:\wxWidgets-3.0.2\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MinimalRebuild>true</MinimalRebuild>
       <EnableParallelCodeGeneration>true</EnableParallelCodeGeneration>
       <EnableEnhancedInstructionSet>AdvancedVectorExtensions</EnableEnhancedInstructionSet>
@@ -125,7 +125,7 @@
       <OptimizeReferences>
       </OptimizeReferences>
       <AdditionalLibraryDirectories>C:\Poco\lib\lib_x32;C:\wxWidgets-3.0.2\lib\vc_lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalDependencies>wxmsw30u_html.lib;wxmsw30u_richtext.lib;wxmsw30u_core.lib;wxbase30u.lib;comctl32.lib;gdiplus.lib;rpcrt4.lib;PocoFoundation.lib;%(AdditionalDependencies)</AdditionalDependencies>
+      <AdditionalDependencies>wxmsw30u_html.lib;wxmsw30u_richtext.lib;wxmsw30u_core.lib;wxbase30u.lib;comctl32.lib;gdiplus.lib;rpcrt4.lib;PocoFoundation.lib;PocoData.lib;PocoDataSQLite.lib;PocoUtil.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
@@ -147,19 +147,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="bio_application.cpp" />
+    <ClCompile Include="bio_application_resource.cpp" />
     <ClCompile Include="bio_control_resource.cpp" />
-    <ClCompile Include="bio_device_settings.cpp" />
-    <ClCompile Include="bio_device_settings_resource.cpp" />
-    <ClCompile Include="bio_face_information_settings.cpp" />
-    <ClCompile Include="bio_face_information_settings_resource.cpp" />
     <ClCompile Include="bio_face_page.cpp" />
     <ClCompile Include="bio_face_resource.cpp" />
-    <ClCompile Include="bio_face_settings.cpp" />
-    <ClCompile Include="bio_face_settings_resource.cpp" />
+    <ClCompile Include="bio_location_settings.cpp" />
+    <ClCompile Include="bio_location_settings_resource.cpp" />
     <ClCompile Include="bio_form.cpp" />
     <ClCompile Include="bio_form_resources.cpp" />
-    <ClCompile Include="bio_general_settings.cpp" />
-    <ClCompile Include="bio_general_settings_resource.cpp" />
     <ClCompile Include="bio_grid_settings.cpp" />
     <ClCompile Include="bio_grid_settings_resource.cpp" />
     <ClCompile Include="bio_info_resource.cpp" />
@@ -171,6 +166,8 @@
     <ClCompile Include="bio_main_menu.cpp" />
     <ClCompile Include="bio_main_menu_resource.cpp" />
     <ClCompile Include="bio_personal_page.cpp" />
+    <ClCompile Include="bio_personal_resource.cpp" />
+    <ClCompile Include="bio_properties.cpp" />
     <ClCompile Include="bio_search_settings.cpp" />
     <ClCompile Include="bio_search_settings_resource.cpp" />
     <ClCompile Include="bio_settings_resource.cpp" />
@@ -196,22 +193,21 @@
     <ClCompile Include="uinfo_item.cpp" />
     <ClCompile Include="uinfo_menu_item.cpp" />
     <ClCompile Include="usettings_info_item.cpp" />
+    <ClCompile Include="wx_bio_face_streamer.cpp" />
+    <ClCompile Include="wx_bio_face_view.cpp" />
+    <ClCompile Include="wx_bio_view.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bio_application.hpp" />
+    <ClInclude Include="bio_application_resource.hpp" />
     <ClInclude Include="bio_control_resource.hpp" />
-    <ClInclude Include="bio_device_settings.hpp" />
-    <ClInclude Include="bio_device_settings_resource.hpp" />
-    <ClInclude Include="bio_face_information_settings.hpp" />
-    <ClInclude Include="bio_face_information_settings_resource.hpp" />
     <ClInclude Include="bio_face_page.hpp" />
     <ClInclude Include="bio_face_resource.hpp" />
-    <ClInclude Include="bio_face_settings.hpp" />
-    <ClInclude Include="bio_face_settings_resource.hpp" />
+    <ClInclude Include="bio_list_model.hpp" />
+    <ClInclude Include="bio_location_settings.hpp" />
+    <ClInclude Include="bio_location_settings_resource.hpp" />
     <ClInclude Include="bio_form.hpp" />
     <ClInclude Include="bio_form_resources.hpp" />
-    <ClInclude Include="bio_general_settings.hpp" />
-    <ClInclude Include="bio_general_settings_resource.hpp" />
     <ClInclude Include="bio_grid_settings.hpp" />
     <ClInclude Include="bio_grid_settings_resource.hpp" />
     <ClInclude Include="bio_info_resource.hpp" />
@@ -224,6 +220,8 @@
     <ClInclude Include="bio_main_menu_resource.hpp" />
     <ClInclude Include="bio_main_menu_utils.hpp" />
     <ClInclude Include="bio_personal_page.hpp" />
+    <ClInclude Include="bio_personal_resource.hpp" />
+    <ClInclude Include="bio_properties.hpp" />
     <ClInclude Include="bio_search_settings.hpp" />
     <ClInclude Include="bio_search_settings_resource.hpp" />
     <ClInclude Include="bio_settings_resource.hpp" />
@@ -248,7 +246,17 @@
     <ClInclude Include="uapp_info_item.hpp" />
     <ClInclude Include="uinfo_item.hpp" />
     <ClInclude Include="uinfo_menu_item.hpp" />
+    <ClInclude Include="ui_notifications.hpp" />
     <ClInclude Include="usettings_info_item.hpp" />
+    <ClInclude Include="wx_bio_face_streamer.hpp" />
+    <ClInclude Include="wx_bio_face_view.hpp" />
+    <ClInclude Include="wx_bio_view.hpp" />
+    <ClInclude Include="wx_bio_view_zoom_slider.hpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\BioSkyNetData\BioSkyNetData.vcxproj">
+      <Project>{519994d1-71a8-49ba-8203-78d6841d47fe}</Project>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

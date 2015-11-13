@@ -1,6 +1,5 @@
-#ifndef Bio_Properties_Utils_INCLUDED
-#define Bio_Properties_Utils_INCLUDED
-
+#ifndef IUi_Subscrible_INCLUDED
+#define IUi_Subscrible_INCLUDED
 
 namespace SmartBio
 {
@@ -27,9 +26,9 @@ namespace SmartBio
 				do_unsubscribe();
 			}
 		private:
-			virtual void do_subscribe() = 0;
+			virtual void do_subscribe  () = 0;
 			virtual void do_unsubscribe() = 0;
-			virtual void do_create() = 0;
+			virtual void do_create     () = 0;
 
 		};
 	}

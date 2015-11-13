@@ -20,8 +20,9 @@ namespace SmartBio
 
 			~BioGridSettings();	
 
-		private:
-			void do_initialize();
+		public:
+			virtual void Init();
+			//void Init();
 
 		};
 	}

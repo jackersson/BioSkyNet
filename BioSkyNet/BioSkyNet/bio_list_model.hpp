@@ -1,11 +1,7 @@
-#ifndef Bio_Face_Page_INCLUDED
-#define Bio_Face_Page_INCLUDED
+/*
+#ifndef Bio_List_Model_INCLUDED
+#define Bio_List_Model_INCLUDED
 
-#include "iui_subscrible.hpp"
-
-#include "../BioSkyNetData/bio_photo_item_binder.hpp"
-
-#include "wx_bio_face_streamer.hpp"
 
 namespace SmartBio
 {
@@ -17,14 +13,16 @@ namespace SmartBio
 		public:
 			enum
 			{
-				/*Col_EditableText,*/
+				/ *Col_EditableText,* /
 				Col_IconText,
-		/*		Col_TextWithAttr,
-				Col_Custom,*/
+				/ *		Col_TextWithAttr,
+				Col_Custom,* /
 				Col_Max
 			};
 
 			MyListModel();
+			~MyListModel();
+
 
 			// helper methods to change the model
 
@@ -45,7 +43,7 @@ namespace SmartBio
 			{
 				if (col == Col_IconText)
 					return wxT("bitmap");
-					//return wxT("wxDataViewIconText");
+				//return wxT("wxDataViewIconText");
 
 				return wxT("string");
 			}
@@ -120,55 +118,9 @@ namespace SmartBio
 			wxString m_value;
 		};
 
-
-		class BioFacePage : public wxPanel, public IUiSubscrible
-		{
-		public:
-			BioFacePage(wxWindow* parent, wxWindowID id);
-			virtual ~BioFacePage();
-
-			void update(const Data::BioPhotoItem& photo_item);
-							
-		private:
-			void do_create     ();
-			void do_unsubscribe();
-			void do_subscribe  ();
-
-		private:
-			
-			void onEnrollFromCamera  (wxCommandEvent& e);
-			void onEnrollFromImage   (wxCommandEvent& e);
-			void onSelectedFaceDelete(wxCommandEvent& e);
-			void onItemSelection     (wxDataViewEvent& e);
-
-		private:
-			wxBioFaceStreamer*  person_photo_          ;
-			wxDataViewCtrl*     enrolled_photos_holder_;
-			wxStaticBitmap*     enroll_status_image_   ;
-
-
-			//TODO make corresponding type of properties
-			wxStringProperty* number_of_faces_    ; //int
-			wxStringProperty*	natural_skin_color_ ; //bool
-			wxStringProperty*	gender_							; //Gender
-			wxStringProperty*	age_								; //int
-			wxStringProperty*	glasses_						; //bool
-			wxStringProperty*	resolution_					; //string
-			wxStringProperty*	ethnicity_					; //Ethnithity
-			//Add propery Sample Quality (float)
-
-			wxBitmapButton* btn_enroll_from_camera_;
-			wxBitmapButton* btn_enroll_from_image_ ;
-			wxBitmapButton* btn_face_delete_       ;
-
-			wxDataViewColumn* first_name_;
-			wxDataViewColumn* photo_path_;
-
-			std::map<int, Data::BioPhotoItem> photo_items_;
-
-		};
 	}
 }
 
-#endif
 
+#endif
+*/

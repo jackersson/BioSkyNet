@@ -5,6 +5,11 @@
 
 #include "../SmartInterfaces/imodel.hpp"
 
+#include "ui_notifications.hpp"
+#include "tab_controller.hpp"
+
+#include "Poco/AutoPtr.h"
+
 namespace SmartBio { namespace View
 {
 	class BioForm : public wxFrame
@@ -15,28 +20,17 @@ namespace SmartBio { namespace View
 	public:
 		BioForm();
 		BioForm( wxWindow* parent, const wxWindowID id = 1, const wxString& title = wxEmptyString);
-		virtual ~BioForm();
-		
-// 
-// 		void addItem( wxWindow* item, int proportion, int flag, int border )
-// 		{
-// 			sizer_panel_->Add(item, proportion, flag, border);
-// 
-// 			this->Layout();
-// 		}
+		virtual ~BioForm();	
 
 		//void onClose(wxCloseEvent& event);
-
 
 		void setTop( wxApp& application )
 		{
 			application.SetTopWindow( this );
 		}
 
-	/*	Poco::SharedPtr<LogControl>& logControl()
-		{
-			return log_control_;
-		}*/
+	private:
+		void onCreatePersonTabNotification(const Poco::AutoPtr<CreatePersonTabNotification>& notif);
 
 	private: 
 		void onAbout(wxCommandEvent& event);
@@ -51,15 +45,18 @@ namespace SmartBio { namespace View
 				
 	private:
 		/*Poco::SharedPtr<LogControl>    log_control_;*/
-		//Poco::SharedPtr<TabController> tab_control_;
+		Poco::SharedPtr<TabController> tab_controller_;
 
 	private: // UI elements
 		wxStatusBar*    status_bar_   ;
 		wxMenuBar*      menu_bar_     ;		
 		wxToolBar*      tool_bar_     ;
 		wxBoxSizer*     sizer_panel_  ;
-		wxTextCtrl*     logg_control_  ;
+		wxTextCtrl*     logg_control_ ;
 		wxAuiManager    frame_manager_;
+
+		/*TabController* tab_controller_;*/
+
 	private:
 		void create();
 		//void subscribe();

@@ -60,9 +60,6 @@
     <ClCompile Include="bio_person_binder.cpp">
       <Filter>Source Files\person</Filter>
     </ClCompile>
-    <ClCompile Include="bio_person_db_io.cpp">
-      <Filter>Source Files\person</Filter>
-    </ClCompile>
     <ClCompile Include="database_logger.cpp">
       <Filter>Source Files\logger</Filter>
     </ClCompile>
@@ -113,9 +110,6 @@
     <ClInclude Include="bio_person_binder.hpp">
       <Filter>Header Files\data_holders\person</Filter>
     </ClInclude>
-    <ClInclude Include="bio_person_db_io.hpp">
-      <Filter>Header Files\data_holders\person</Filter>
-    </ClInclude>
     <ClInclude Include="database_logger.hpp">
       <Filter>Header Files\data_holders\logger</Filter>
     </ClInclude>
@@ -154,6 +148,9 @@
     </ClInclude>
     <ClInclude Include="bio_db_io.hpp">
       <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="bio_data_types.hpp">
+      <Filter>Header Files\data_holders</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

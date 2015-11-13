@@ -12,19 +12,19 @@ namespace Poco
 		class Poco::Data::TypeHandler<PhotoItemType>
 		{
 		public:
-			static void bind(std::size_t pos, const PhotoItemType& obj
-				, AbstractBinder::Ptr pBinder, AbstractBinder::Direction dir);
+			static void bind( std::size_t pos, const PhotoItemType& obj
+				              , AbstractBinder::Ptr pBinder, AbstractBinder::Direction dir);
 
 
-			static void prepare(std::size_t pos, const PhotoItemType& obj
-				, AbstractPreparator::Ptr pPrepare);
+			static void prepare( std::size_t pos, const PhotoItemType& obj
+				                 , AbstractPreparator::Ptr pPrepare);
 
 
 			static std::size_t size();
 
 
-			static void extract(std::size_t pos, PhotoItemType& obj
-				, const PhotoItemType& defVal, AbstractExtractor::Ptr pExt);
+			static void extract( std::size_t pos, PhotoItemType& obj
+				                 , const PhotoItemType& defVal, AbstractExtractor::Ptr pExt);
 
 
 		private:

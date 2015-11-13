@@ -13,6 +13,7 @@ namespace SmartBio
 			                           , glasses_					 	 (true)
 			                           , resolution_				 ("")
 																 , etnicity_           (Etnicity::White)
+																 , sample_quality_     (0.0)
 																 
 		{
 
@@ -25,11 +26,12 @@ namespace SmartBio
 			, int                age
 			, bool               glasses
 			, const std::string& resolution
-			, Etnicity					 etnicity             )
+			, Etnicity					 etnicity    
+			, float              sample_quality    )
 			
 
 
-			: index_               ( index               )
+			: index_               ( index              )
 			, photo_path_          ( photo_path         )
 			, fir_path_						 ( fir_path						)
 			, natural_skin_color_	 ( natural_skin_color	)
@@ -38,6 +40,7 @@ namespace SmartBio
 			, glasses_						 ( glasses						)
 			, resolution_					 ( resolution					)
 			, etnicity_						 ( etnicity           )
+			, sample_quality_      (sample_quality      )
 		{
 
 		}
@@ -90,6 +93,11 @@ namespace SmartBio
 			return etnicity_;
 		}
 
+		float BioPhotoItem::sampleQuality() const
+		{
+			return sample_quality_;
+		}
+
 		void BioPhotoItem::setIndex(int index)
 		{
 			index_ = index;
@@ -133,6 +141,11 @@ namespace SmartBio
 		void BioPhotoItem::setEtnicity(Etnicity etnicity)
 		{
 			etnicity_ = etnicity;
+		}
+
+		void BioPhotoItem::setSampleQuality(float sample_quality)
+		{
+			sample_quality_ = sample_quality;
 		}
 		
 	}

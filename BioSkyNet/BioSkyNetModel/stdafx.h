@@ -1,3 +1,5 @@
+#include "Poco/SharedPtr.h"
+
 #include "Poco/Data/Date.h"
 
 #include "Poco/Data/Statement.h"

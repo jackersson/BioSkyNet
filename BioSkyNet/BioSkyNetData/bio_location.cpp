@@ -1,6 +1,8 @@
 #include "stdafx.h"
 #include "bio_location.hpp"
 
+#include "Poco/StringTokenizer.h"
+
 namespace SmartBio
 {
 	namespace Data
@@ -17,26 +19,26 @@ namespace SmartBio
 		{
 
 		}
-		BioLocation::BioLocation(int index
-			, const std::string& location_name
-			, const std::string& port_name
-			, const std::string& email_notification
-			, const std::string& camera_name
-			, int                age_treshold
-			, float              face_confidence
-			, float              min_eye_distance
-			, float							 max_eye_distance
-			, float							 matching_treshold  ) 
-			: index_(index)
-			, location_name_     (location_name       )
-			, port_name_         (port_name						)
-			, email_notification_(email_notification	)
-			, camera_name_       (camera_name 				)
-			, age_treshold_      (age_treshold				)
-			, face_confidence_   (face_confidence			)
-			, min_eye_distance_  (min_eye_distance		)
-			,	max_eye_distance_  (max_eye_distance		)
-			,	matching_treshold_ (matching_treshold  	)
+		BioLocation::BioLocation(  int index
+			                       , const std::string& location_name
+			                       , const std::string& port_name
+			                       , const std::string& email_notification
+			                       , const std::string& camera_name
+			                       , int                age_treshold
+			                       , float              face_confidence
+			                       , float              min_eye_distance
+			                       , float							 max_eye_distance
+			                       , float							 matching_treshold  ) 
+			                       : index_(index)
+			                       , location_name_     (location_name       )
+			                       , port_name_         (port_name						)
+			                       , email_notification_(email_notification	)
+			                       , camera_name_       (camera_name 				)
+			                       , age_treshold_      (age_treshold				)
+			                       , face_confidence_   (face_confidence			)
+			                       , min_eye_distance_  (min_eye_distance		)
+			                       ,	max_eye_distance_  (max_eye_distance		)
+			                       ,	matching_treshold_ (matching_treshold  	)
 
 
 		{
@@ -94,9 +96,7 @@ namespace SmartBio
 		float BioLocation::matching_treshold() const
 		{
 			return matching_treshold_;
-		}
-
-		
+		}		
 
 		void BioLocation::setIndex(int index)
 		{
@@ -116,6 +116,19 @@ namespace SmartBio
 		void BioLocation::setEmailNotifiaction(const std::string& email_notification)
 		{
 			email_notification_ = email_notification;
+
+			person_indexs_.clear();
+			if (email_notification_.empty())
+				return;
+
+
+			Poco::StringTokenizer tk(email_notification_, ",", Poco::StringTokenizer::TOK_TRIM);
+
+			for (Poco::StringTokenizer::Iterator it = tk.begin(); it != tk.end(); ++it)
+			{
+				std::string temp(*it);
+				person_indexs_.push_back(stoi(temp));
+			}
 		}
 
 		void BioLocation::setCameraName(const std::string& camera_name)
@@ -146,6 +159,11 @@ namespace SmartBio
 		void BioLocation::setMatchingTreshold(float matching_treshold)
 		{
 			matching_treshold_ = matching_treshold;
+		}
+
+		const std::vector<int>&   BioLocation::personIndexs()   const
+		{
+			return person_indexs_;
 		}
 
 	}

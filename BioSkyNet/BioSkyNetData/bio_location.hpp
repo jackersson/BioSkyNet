@@ -15,16 +15,16 @@ namespace SmartBio
 		public:
 			BioLocation();
 
-			BioLocation(int index
-				, const std::string&     location_name
-				, const std::string&     port_name
-				, const std::string&	   email_notification
-				, const std::string&     camera_name
-				, int                    age_treshold
-				, float                  face_confidence
-				, float                  min_eye_distance
-				, float                  max_eye_distance
-				, float                  matching_treshold  );
+			BioLocation( int index
+				         , const std::string&  location_name
+				         , const std::string&  port_name
+				         , const std::string&	 email_notification
+				         , const std::string&  camera_name
+				         , int                 age_treshold
+				         , float               face_confidence
+				         , float               min_eye_distance
+				         , float               max_eye_distance
+				         , float               matching_treshold  );
 
 			virtual ~BioLocation();
 
@@ -60,6 +60,7 @@ namespace SmartBio
 			float								 matching_treshold()   const;
 			int                  index()               const;
 
+			const std::vector<int>&   personIndexs()   const;
 
 		public:
 			void setLocationName     (const std::string& location_name_     );
@@ -71,7 +72,7 @@ namespace SmartBio
 			void setMinEyeDistance   (float              min_eye_distance_  );
 			void setMaxEyeDistance   (float              max_eye_distance_  );
 			void setMatchingTreshold (float							 matching_treshold_ );
-			void setIndex            (int                   index_          );
+			void setIndex            (int                index_             );
 
 
 
@@ -87,6 +88,9 @@ namespace SmartBio
 			float       max_eye_distance_  ;
 			float				matching_treshold_ ;
 		  int				  index_          	 ;
+
+			//for email notification
+			std::vector<int> person_indexs_;
 		};
 
 

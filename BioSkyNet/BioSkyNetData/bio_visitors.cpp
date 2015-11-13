@@ -1,37 +1,40 @@
 #include "stdafx.h"
 #include "bio_visitors.hpp"
 
+
+#include "Poco/StringTokenizer.h"
+
 namespace SmartBio
 {
 	namespace Data
 	{
 		BioVisitor::BioVisitor() : person_indexs_("")
-			, photo_indexs_					("")
-			, detected_face_count_  (0)
-			, full_photo_pathway_   ("")
-			, detection_time_       (0)
-			, location_indexs_      ("")
-			, status_               (Status::Access)
+			                       , photo_indexs_					("")
+			                       , detected_face_count_  (0)
+			                       , full_photo_pathway_   ("")
+			                       , detection_time_       (0)
+			                       , location_index_      (0)
+			                       , status_               (Status::Access)
 
 		{
 			
 		}
-		BioVisitor::BioVisitor(int index
-			, const std::string&    person_indexs
-			, const std::string&    photo_indexs
-			, int               	  detected_face_count
-			, const std::string&    full_photo_pathway
-			, const Poco::DateTime& detection_time
-			, const std::string&    location_indexs
-			, Status                status             )
-			: index_(index)
-			, person_indexs_      (person_indexs      )
-			, photo_indexs_       (photo_indexs       )
-			, detected_face_count_(detected_face_count)
-			, full_photo_pathway_ (full_photo_pathway )
-			, detection_time_     (detection_time     )
-			, location_indexs_    (location_indexs    )
-			, status_             (status             )
+		BioVisitor::BioVisitor( int index
+			                    , const std::string&    person_indexs
+			                    , const std::string&    photo_indexs
+			                    , int               	  detected_face_count
+			                    , const std::string&    full_photo_pathway
+			                    , const Poco::DateTime& detection_time
+			                    , int                   location_indexs
+			                    , Status                status             )
+			                    : index_(index)
+			                    , person_indexs_      (person_indexs      )
+			                    , photo_indexs_       (photo_indexs       )
+			                    , detected_face_count_(detected_face_count)
+			                    , full_photo_pathway_ (full_photo_pathway )
+			                    , detection_time_     (detection_time     )
+			                    , location_index_    (location_indexs    )
+			                    , status_             (status             )
 
 		{
 
@@ -65,9 +68,9 @@ namespace SmartBio
 			return detection_time_;
 		}
 
-		const std::string& BioVisitor::locationIndexs() const
+		int BioVisitor::locationIndex() const
 		{
-			return location_indexs_;
+			return location_index_;
 		}
 
 
@@ -84,11 +87,37 @@ namespace SmartBio
 		void BioVisitor::setPersonIndexs(const std::string& person_indexs)
 		{
 			person_indexs_ = person_indexs;
+
+			person_indexes_.clear();
+			if (person_indexs_.empty())
+				return;
+
+
+			Poco::StringTokenizer tk(person_indexs_, ",", Poco::StringTokenizer::TOK_TRIM);
+
+			for (Poco::StringTokenizer::Iterator it = tk.begin(); it != tk.end(); ++it)
+			{
+				std::string temp(*it);
+				person_indexes_.push_back(stoi(temp));
+			}
 		}
 
 		void BioVisitor::setPhotoIndexs(const std::string& photo_indexs)
 		{
 			photo_indexs_ = photo_indexs;
+
+			photo_indexes_.clear();
+			if (photo_indexs_.empty())
+				return;
+
+
+			Poco::StringTokenizer tk(photo_indexs_, ",", Poco::StringTokenizer::TOK_TRIM);
+
+			for (Poco::StringTokenizer::Iterator it = tk.begin(); it != tk.end(); ++it)
+			{
+				std::string temp(*it);
+				photo_indexes_.push_back(stoi(temp));
+			}
 		}
 
 		void BioVisitor::setDetectedFaceCount(const int detected_face_count)
@@ -106,9 +135,9 @@ namespace SmartBio
 			detection_time_ = detection_time;
 		}
 
-		void BioVisitor::setLocationIndexs(const std::string& location_indexs)
+		void BioVisitor::setLocationIndexs(int location_indexs)
 		{
-			location_indexs_ = location_indexs;
+			location_index_ = location_indexs;
 		}
 
 		void BioVisitor::setStatus(Status status)

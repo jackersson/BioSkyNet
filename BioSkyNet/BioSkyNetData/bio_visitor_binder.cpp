@@ -21,7 +21,7 @@ namespace Poco
 			pBinder->bind(pos++, obj.detectedFaceCount(), dir);
 			pBinder->bind(pos++, obj.fullPhotoPathway() , dir);
 			pBinder->bind(pos++, obj.detectionTime()    , dir);
-			pBinder->bind(pos++, obj.locationIndexs()   , dir);
+			pBinder->bind(pos++, obj.locationIndex()   , dir);
 			pBinder->bind(pos++, obj.status()           , dir);
 
 		}
@@ -49,7 +49,7 @@ namespace Poco
 			int       	   detected_face_count;
 			std::string    full_photo_pathway ;
 			Poco::DateTime detection_time     ;
-			std::string    location_indexs    ;
+			int            location_indexs    ;
 			int            status             ;
 			int            index              ;
 			std::string    detection_time_str ;
@@ -88,10 +88,10 @@ namespace Poco
 			if (pExt->extract(pos++, location_indexs))
 				obj.setLocationIndexs(location_indexs);
 			else
-				obj.setLocationIndexs(defVal.locationIndexs());
+				obj.setLocationIndexs(defVal.locationIndex());
 
 			if (pExt->extract(pos++, status))
-				obj.setStatus((SmartBio::Data::Status)(status));
+				obj.setStatus((SmartBio::Status)(status));
 			else
 				obj.setStatus(defVal.status());
 		}

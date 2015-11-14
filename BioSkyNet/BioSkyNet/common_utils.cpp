@@ -111,5 +111,46 @@ namespace SmartBio
 		}
 
 
+		/******************************************************************/
+
+		wxMenuItem* CommonUtils::addMenuItem(int index 
+			, BioControlResource<UInfoItem>& resource
+			, wxMenu& menu)
+		{
+			bool flag(false);
+			View::UInfoItem item = resource.get(index, flag);
+
+			if (flag)
+			{
+				wxMenuItem* txt = menu.Append(index, item.text());
+
+				return txt;
+			}
+
+			return NULL;
+		}
+
+
+
+		wxBioFaceStreamer* CommonUtils::addFaceStreamer(int index
+			, BioControlResource<UInfoItem>& resource, wxPanel* panel
+			, wxSizer* sizer)
+		{
+			bool flag(false);
+			View::UInfoItem item = resource.get(index, flag);
+
+			if (flag)
+			{
+				wxBioFaceStreamer* fs = new wxBioFaceStreamer(panel, index);
+
+				sizer->Add(fs, 1, wxALL | wxEXPAND, 5);
+
+				return fs;
+			}
+
+			return NULL;
+		}
+		
+
 	}
 }

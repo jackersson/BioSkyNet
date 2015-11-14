@@ -255,6 +255,9 @@
     <ClCompile Include="bio_users_resource.cpp">
       <Filter>Source Files\resources\users</Filter>
     </ClCompile>
+    <ClCompile Include="bio_list_model.cpp">
+      <Filter>Source Files\utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="bio_application.hpp">

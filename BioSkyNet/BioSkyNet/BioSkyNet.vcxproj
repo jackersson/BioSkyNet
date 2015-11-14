@@ -151,6 +151,7 @@
     <ClCompile Include="bio_control_resource.cpp" />
     <ClCompile Include="bio_face_page.cpp" />
     <ClCompile Include="bio_face_resource.cpp" />
+    <ClCompile Include="bio_list_model.cpp" />
     <ClCompile Include="bio_location_settings.cpp" />
     <ClCompile Include="bio_location_settings_resource.cpp" />
     <ClCompile Include="bio_form.cpp" />

@@ -4,6 +4,7 @@
 #include "iui_subscrible.hpp"
 #include "../BioSkyNetData/bio_person_binder.hpp"
 #include "bio_properties.hpp"
+#include "bio_profile_resource.hpp"
 #include "wx_bio_face_streamer.hpp"
 
 
@@ -57,7 +58,10 @@ namespace SmartBio
 			wxInfoBar*     info_bar;	
 
 			Data::BioPerson person_;
-			Data::BioPerson editable_person_;			
+			Data::BioPerson editable_person_;		
+
+			Poco::SharedPtr<BioProfileResource>  resource;
+
 
 			//holding all properties to check are they valid or not
 			std::map<std::string, int> properties_;

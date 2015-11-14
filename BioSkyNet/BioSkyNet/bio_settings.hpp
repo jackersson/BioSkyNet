@@ -17,6 +17,9 @@ namespace SmartBio
 				         , wxWindowID id = wxID_ANY );
 
 			~BioSettings();
+
+		public:
+			
 			
 		private:
 			wxBitmapButton* btn_apply_           ;

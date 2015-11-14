@@ -10,104 +10,14 @@ namespace SmartBio
 {
 	namespace View
 	{
-		BioPropertiesUtils::BioPropertiesUtils(){}
-
-		BioPropertiesUtils::~BioPropertiesUtils(){}	
-
-/*
-		wxEnumProperty* BioPropertiesUtils::createEnumProperty(int index, wxPropertyGridInterface& page
-																								          , BioControlResource<USettingInfoItem>& resource)
+		BioPropertiesUtils::BioPropertiesUtils()
 		{
-			bool flag(false);
-			USettingInfoItem item = resource.get(index, flag);
+		}
 
-			if (flag)
-			{
-				wxEnumProperty* prop = new wxEnumProperty(item.text(), wxPG_LABEL);
-				prop->SetHelpString(item.hint());
-				page.Append(prop);
-
-				return prop;
-			}
-
-			return NULL;
-		}*/
-
-/*
-		wxBoolProperty* BioPropertiesUtils::createBoolProperty( int index, wxPropertyGridPage& page
-																							            , BioControlResource<USettingInfoItem>& resource)
+		BioPropertiesUtils::~BioPropertiesUtils()
 		{
-			bool flag(false);
-			USettingInfoItem item = resource.get(index, flag);
+		}	
 
-			if (flag)
-			{
-				wxBoolProperty* prop = new wxBoolProperty(item.text(), wxPG_LABEL);
-				prop->SetEditor(wxPGEditor_CheckBox);
-				prop->SetHelpString(item.hint());
-				page.Append(prop);
-				return prop;
-
-			}
-
-			return NULL;
-		}*/
-
-/*
-		wxStringProperty* BioPropertiesUtils::createStringProperty(int index, wxPropertyGridInterface& page
-			, BioControlResource<UInfoItem>& resource)
-		{
-			bool flag(false);
-			UInfoItem item = resource.get(index, flag);
-
-			if (flag)
-			{
-				wxStringProperty* prop = new wxStringProperty(item.text(), wxPG_LABEL);			
-				page.Append(prop);
-				return prop;
-
-			}
-
-			return NULL;
-		}*/
-
-/*
-		wxDateProperty* BioPropertiesUtils::createDateProperty(int index, wxPropertyGridInterface& page
-			, BioControlResource<UInfoItem>& resource)
-		{
-			bool flag(false);
-			UInfoItem item = resource.get(index, flag);
-
-			if (flag)
-			{
-				wxDateProperty* prop = new wxDateProperty(item.text(), wxPG_LABEL);
-				page.Append(prop);
-				return prop;
-
-			}
-
-			return NULL;
-		}*/
-
-/*
-		wxPropertyCategory* BioPropertiesUtils::createPropertyCategory( int index, wxPropertyGridPage& page
-			                                                            , BioControlResource<USettingInfoItem>& resource)
-		{
-			bool flag(false);
-			USettingInfoItem item = resource.get(index, flag);
-
-			if (flag)
-			{
-				wxPropertyCategory* prop = new wxPropertyCategory(item.text(), wxPG_LABEL);
-				//prop->SetEditor(wxPGEditor_CheckBox);
-				prop->SetHelpString(item.hint());
-				page.Append(prop);
-				return prop;
-
-			}
-
-			return NULL;
-		}*/
 
 		wxEnumProperty* BioPropertiesUtils::createEnumPropertyWithChoises( int index, wxPropertyGridInterface& page
 			                                                               , BioControlResource<USettingInfoItem>& personal_resource)
@@ -180,6 +90,22 @@ namespace SmartBio
 			}
 
 			return NULL;
+		}
+
+
+
+		void BioPropertiesUtils::createColumn(int index, wxDataViewCtrl& page
+			, int mlist, BioControlResource<UInfoItem>& resource, wxDataViewRenderer* renderer)
+		{
+			bool flag(false);
+			UInfoItem item = resource.get(index, flag);
+
+			if (flag)			
+				page.AppendColumn(new wxDataViewColumn(item.text(), renderer
+					, mlist, wxCOL_WIDTH_AUTOSIZE));
+			
+			
+
 		}
 
 	}

@@ -72,6 +72,11 @@ namespace SmartBio
 
 			main_sizer->Add(settings, 7, wxALL | wxEXPAND, 5);
 
+			wxBoxSizer* info_sizer = new wxBoxSizer(wxHORIZONTAL);
+			main_sizer->Add(info_sizer, 1, wxALL | wxEXPAND, 5);
+
+
+
 			wxBoxSizer* tools_sizer = new wxBoxSizer(wxHORIZONTAL);
 			main_sizer->Add(tools_sizer, 1, wxALL | wxEXPAND, 5);
 

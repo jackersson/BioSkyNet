@@ -43,7 +43,9 @@ namespace SmartBio { namespace View
 	
 	BioForm::BioForm( wxWindow* parent
 	                , wxWindowID const id, wxString const& title)
-									: wxFrame(parent, id, title, wxDefaultPosition, wxSize( WINDOW_WIDTH, WINDOW_HEIGHT ) )
+									: wxFrame(parent, id, title, wxDefaultPosition, 
+									///*wxSize( WINDOW_WIDTH, WINDOW_HEIGHT )* 
+									wxSize( wxSystemSettings::GetMetric(wxSYS_SCREEN_X), wxSystemSettings::GetMetric(wxSYS_SCREEN_Y)) )
 	{
 		create();
 	}
@@ -72,6 +74,8 @@ namespace SmartBio { namespace View
 	
 	wxAuiNotebook* BioForm::createNotebook()
 	{
+
+		
 		// create the notebook off-window to avoid flicker
 		wxSize client_size = GetClientSize();
 		long m_notebook_style;
@@ -146,9 +150,9 @@ namespace SmartBio { namespace View
 		//tb->AddPage(start_page, "test", true, page_bmp);
 		//tb->Thaw();
 
-		/*MainBioPage*   bio_page = new MainBioPage(this, wxID_ANY);
+		MainBioPage*   bio_page = new MainBioPage(this, wxID_ANY);
 		tab_controller_->AddPage(bio_page, "User Data", true, page_bmp);
-		*/
+		
 		//tb->Thaw();
 
 		BioUsersPage*   bio_users_page = new BioUsersPage(this, wxID_ANY);

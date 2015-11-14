@@ -23,6 +23,7 @@ namespace SmartBio
 			View::UInfoItem btn_save     ("", "Save"     , "resources\\profile\\save.png"     , "");
 			View::UInfoItem btn_delete   ("", "Delete"   , "resources\\profile\\delete.png"   , "");
 			View::UInfoItem avatar       ("", "Avatar"   , "resources\\profile\\avatar.png"   , "");
+
 			View::UInfoItem first_name   ("First Name *", "", "", "")	;
 			View::UInfoItem last_name    ("Last Name *", "", "", "")	;
 			View::UInfoItem date_of_birth("Date of birth *", "", "", "")	;
@@ -31,20 +32,27 @@ namespace SmartBio
 			View::UInfoItem comments     ("Comments", "", "", "")	;
 			View::UInfoItem email        ("Email", "", "", "")	;
 
+			View::UInfoItem info_bar_upd_msg("Please fill all required fields", "", "", "");
+
+
 			
-			insert(UIBioProfilePage::ID_BTN_PROFILE_ADD_USER    , btn_add_user );
-			insert(UIBioProfilePage::ID_BTN_REFRESH             , btn_refresh  );
-			insert(UIBioProfilePage::ID_BTN_OPEN                , btn_open     );
-			insert(UIBioProfilePage::ID_BTN_SAVE                , btn_save     );
-			insert(UIBioProfilePage::ID_BTN_DELETE              , btn_delete   );
-			insert(UIBioProfilePage::ID_AVATAR                  , avatar       );
-			insert(UIBioProfilePage::ID_BIO_PERSON_FIRST_NAME   , first_name   );
-			insert(UIBioProfilePage::ID_BIO_PERSON_LAST_NAME    , last_name    );
-			insert(UIBioProfilePage::ID_BIO_PERSON_DATE_OF_BIRTH, date_of_birth);
-			insert(UIBioProfilePage::ID_BIO_PERSON_COUNTRY      , country      );
-			insert(UIBioProfilePage::ID_BIO_PERSON_CITY         , city         );
-			insert(UIBioProfilePage::ID_BIO_PERSON_COMMENTS     , comments     );
-			insert(UIBioProfilePage::ID_BIO_PERSON_EMAIL        , email        );
+			insert(UIBioProfilePage::ID_BTN_PROFILE_ADD_USER       , btn_add_user    );
+			insert(UIBioProfilePage::ID_BTN_REFRESH                , btn_refresh     );
+			insert(UIBioProfilePage::ID_BTN_OPEN                   , btn_open        );
+			insert(UIBioProfilePage::ID_BTN_SAVE                   , btn_save        );
+			insert(UIBioProfilePage::ID_BTN_DELETE                 , btn_delete      );
+			insert(UIBioProfilePage::ID_AVATAR                     , avatar          );
+																													   								   
+			insert(UIBioProfilePage::ID_BIO_PERSON_FIRST_NAME      , first_name      );
+			insert(UIBioProfilePage::ID_BIO_PERSON_LAST_NAME       , last_name       );
+			insert(UIBioProfilePage::ID_BIO_PERSON_DATE_OF_BIRTH   , date_of_birth   );
+			insert(UIBioProfilePage::ID_BIO_PERSON_COUNTRY         , country         );
+			insert(UIBioProfilePage::ID_BIO_PERSON_CITY            , city            );
+			insert(UIBioProfilePage::ID_BIO_PERSON_COMMENTS        , comments        );
+			insert(UIBioProfilePage::ID_BIO_PERSON_EMAIL           , email           );
+
+			insert(UIBioProfilePage::ID_BIO_PERSON_INFO_BAR_UPD_MSG, info_bar_upd_msg);
+
 
 
 		}

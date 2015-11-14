@@ -35,6 +35,35 @@ namespace SmartBio
 
 		};
 
+		class wxAgeTresholdPropertyEx : public wxIntProperty
+		{
+
+		public:
+			wxAgeTresholdPropertyEx(const wxString& label,
+				const wxString& name
+				);
+				
+
+			~wxAgeTresholdPropertyEx();
+
+			bool wxAgeTresholdPropertyEx::ValidateValue(wxVariant& value, wxPGValidationInfo& validationInfo) const;
+		};
+
+		class wxFaceConfidencePropertyEx : public wxFloatProperty
+		{
+
+		public:
+			wxFaceConfidencePropertyEx::wxFaceConfidencePropertyEx(const wxString& label,
+				const wxString& name);
+
+
+			wxFaceConfidencePropertyEx::~wxFaceConfidencePropertyEx();
+
+
+			bool wxFaceConfidencePropertyEx::ValidateValue(wxVariant& value, wxPGValidationInfo& validationInfo) const;
+		};
+		
+
 	}
 }
 #endif

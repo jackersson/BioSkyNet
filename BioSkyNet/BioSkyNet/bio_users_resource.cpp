@@ -35,6 +35,10 @@ namespace SmartBio
 			View::UInfoItem comments     ("Comments"     , "", "", "");
 			View::UInfoItem rights       ("Rights"       , "", "", "");
 
+			View::UInfoItem menu_open   ("Open"   , "", "", "");
+			View::UInfoItem menu_add_new("Add new", "", "", "");
+
+
 
 
 			insert(UIBioLocation::ID_TXT_LOCATION_NAME, text);
@@ -52,6 +56,9 @@ namespace SmartBio
 			insert(UIBioUsersPage::ID_BIO_USERS_EMAIL        , email        );
 			insert(UIBioUsersPage::ID_BIO_USERS_COMMENTS     , comments     );
 			insert(UIBioUsersPage::ID_BIO_USERS_RIGHTS       , rights       );
+
+			insert(UIBioUsersPage::ID_BIO_USERS_MENU_OPEN   , menu_open     );
+			insert(UIBioUsersPage::ID_BIO_USERS_MENU_ADD_NEW, menu_add_new  );
 
 		}
 

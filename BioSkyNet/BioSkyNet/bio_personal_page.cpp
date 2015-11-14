@@ -138,11 +138,8 @@ namespace SmartBio
 
 			wxBoxSizer* right_person_image_sizer = new wxBoxSizer(wxVERTICAL);
 			grid_person_sizer->Add(right_person_image_sizer, 1, wxALL | wxEXPAND, 5);
-
-
-			//TODO make in UTILS
-		  avatar_ = new wxBioFaceStreamer(this, ID_AVATAR);
-			person_image_sizer->Add(avatar_ , 1, wxALL | wxEXPAND, 5);
+	
+			avatar_ = utils.addFaceStreamer(ID_AVATAR, *resource, this, person_image_sizer);
 			
 			person_information_ = new wxPropertyGrid( this, wxID_ANY, wxDefaultPosition, wxSize(-1, -1)
 				                                       , wxPG_TOOLBAR | wxPG_SPLITTER_AUTO_CENTER | wxPG_BOLD_MODIFIED );		
@@ -225,13 +222,16 @@ namespace SmartBio
 		}
 
 		void BioPersonalPage::update(bool /*default_update*/ )
-		{
+		{			
 
-			//TODO transfer to resources
-		
+			bool flag(false);
 
 			btn_add_user_->Disable();
-			info_bar->ShowMessage("Please fill all required fields");
+
+			if (flag)
+			{
+				info_bar->ShowMessage(resource->get(ID_BIO_PERSON_INFO_BAR_UPD_MSG, flag).text());
+			}			
 
 			btn_refresh_->Hide();
 			btn_save_   ->Hide();

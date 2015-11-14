@@ -18,6 +18,9 @@ namespace SmartBio
 		{
 			View::UInfoItem btn_delete   (""      , "Delete"    , "resources\\journal\\delete.png"    , "");
 			View::UInfoItem btn_delet_all(""      , "Delete All", "resources\\journal\\delete_all.png", "");
+			View::UInfoItem avatar       (""      , "Avatar"    , "", "");
+
+
 			View::UInfoItem person_name        ("Person"             , "", "", "");
 			View::UInfoItem location           ("Location"           , "", "", "");
 			View::UInfoItem time               ("Time"               , "", "", "");
@@ -26,12 +29,18 @@ namespace SmartBio
 			View::UInfoItem status             ("Status"             , "", "", "");
 			View::UInfoItem detected_face_count("Detected face count", "", "", "");
 
+			View::UInfoItem menu_open_person   ("Open person"        , "", "", "");
+			View::UInfoItem menu_delete_record ("Delete Record"      , "", "", "");
+
+
 
 
 
 			
 			insert(UIBioJournalPage::ID_BTN_JOURNAL_DELETE          , btn_delete         );
 			insert(UIBioJournalPage::ID_BTN_JOURNAL_DELETE_ALL      , btn_delet_all      );
+			insert(UIBioJournalPage::ID_BTN_JOURNAL_AVATAR          , avatar             );
+
 			insert(UIBioJournalPage::ID_JOURNAL_PERSON_NAME         , person_name        );
 			insert(UIBioJournalPage::ID_JOURNAL_LOCATION            , location           );
 			insert(UIBioJournalPage::ID_JOURNAL_TIME                , time               );
@@ -39,6 +48,10 @@ namespace SmartBio
 			insert(UIBioJournalPage::ID_JOURNAL_FULL_PHOTO          , full_photo         );
 			insert(UIBioJournalPage::ID_JOURNAL_STATUS              , status             );
 			insert(UIBioJournalPage::ID_JOURNAL_DETECTED_FACE_COUNT , detected_face_count);
+
+			insert(UIBioJournalPage::ID_JOURNAL_MENU_OPEN_PERSON    , menu_open_person   );
+			insert(UIBioJournalPage::ID_JOURNAL_MENU_DELETE_RECORD  , menu_delete_record );
+
 
 
 

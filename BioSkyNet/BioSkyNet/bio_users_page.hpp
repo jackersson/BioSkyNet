@@ -5,17 +5,13 @@
 
 #include "tab_page.hpp"
 #include "../BioSkyNetData/bio_person_binder.hpp"
+#include "bio_users_resource.hpp"
 
 namespace SmartBio
 {
 	namespace View
 	{
-		enum BioUsersContextMenuID
-		{
-			  ID_USER_OPEN_NEW_TAB
-			, ID_USER_ADD_NEW_TAB
-		};
-				
+
 		class BioUsersPage : public TabPage
 		{
 
@@ -42,7 +38,9 @@ namespace SmartBio
 		private:
 			std::vector<Data::BioPerson> user_data_;		
 
-			wxDataViewListCtrl*  users_list_  ;
+			Poco::SharedPtr<BioUsersResource> resource;
+
+			wxDataViewCtrl*  users_list_  ;
 			wxCommandLinkButton* btn_add_user_;
 			
 			wxDataViewColumn* first_name_    ;

@@ -5,11 +5,16 @@
 
 #include "tab_page.hpp"
 
+#include "bio_journal_resource.hpp"
+
+#include "wx_bio_face_streamer.hpp"
+
+
+
 namespace SmartBio
 {
 	namespace View
 	{
-
 		
 		class BioJournalPage : public TabPage
 		{
@@ -31,6 +36,8 @@ namespace SmartBio
 			void onSelectedItemDelete(wxCommandEvent& e);
 			
 		private:
+			wxBioFaceStreamer*   avatar_                ;
+
 			wxDataViewListCtrl*  users_list_            ;	
 			wxBitmapButton*      btn_journal_delete_    ;
 			wxBitmapButton*      btn_journal_delete_all_;
@@ -42,13 +49,17 @@ namespace SmartBio
 			wxDataViewColumn*    photo_                 ; 
 			wxDataViewColumn*    full_photo_            ; 
 			wxDataViewColumn*	   status_                ; 
-			wxDataViewColumn*	   detected_face_count_   ; 
+			wxDataViewColumn*	   detected_face_count_   ;
+			wxDataViewListCtrl*  journal_list_          ;
+
+			Poco::SharedPtr<BioJournalResource> resource;
+
+			void BioJournalPage::onContextMenu(wxDataViewEvent& evt);
+
+			void BioJournalPage::onContextMenuEvent(wxCommandEvent& evt);
 
 			//TODO add wx_bio_face_view streamer to see the photo_
 
-			//TODO make context menu;
-			//Open Person
-			//Delete Record
 		};
 	}
 }

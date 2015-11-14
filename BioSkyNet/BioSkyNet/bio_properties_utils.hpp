@@ -17,29 +17,12 @@ namespace SmartBio
 			BioPropertiesUtils();
 			~BioPropertiesUtils();
 
-			//TODO Enum property should be only with choices (delete next function)
-			/*wxEnumProperty*     createEnumProperty(   int index, wxPropertyGridInterface& page
-											    			                , BioControlResource<USettingInfoItem>& resource);
-											    									    
-			wxBoolProperty*     createBoolProperty    ( int index, wxPropertyGridPage& page
-														                    , BioControlResource<USettingInfoItem>& resource);
+			
 
-			wxPropertyCategory* createPropertyCategory( int index, wxPropertyGridPage& page
-														                    , BioControlResource<USettingInfoItem>& resource);*/
-
-			//TODO
-			wxEnumProperty*     createEnumPropertyWithChoises( int index
-				                                               , wxPropertyGridInterface& page
-				                                               , BioControlResource<USettingInfoItem>&  personal_resource);
-/*
-
-			wxStringProperty*   createStringProperty (int index, wxPropertyGridInterface& page
-				                                       , BioControlResource<UInfoItem>& resource);
-
-			wxDateProperty*     createDateProperty   (int index, wxPropertyGridInterface& page
-				                                      , BioControlResource<UInfoItem>& resource);*/
-
-
+		
+			wxEnumProperty*   createEnumPropertyWithChoises( int index
+				                                             , wxPropertyGridInterface& page
+				                                             , BioControlResource<USettingInfoItem>&  personal_resource);
 
 			wxDataViewColumn* createTextColumn(int index, wxDataViewListCtrl& page
 				                                , BioControlResource<UInfoItem>& resource);
@@ -49,6 +32,9 @@ namespace SmartBio
 
 			wxDataViewColumn* createBitmapColumn(int index, wxDataViewListCtrl& page
 				                                  , BioControlResource<UInfoItem>& resource);
+
+			void BioPropertiesUtils::createColumn(int index, wxDataViewCtrl& page
+				, int mlist, BioControlResource<UInfoItem>& resource, wxDataViewRenderer* renderer);
 
 			
 
@@ -88,6 +74,8 @@ namespace SmartBio
 
 				return chs;
 			}
+
+
 
 		
 

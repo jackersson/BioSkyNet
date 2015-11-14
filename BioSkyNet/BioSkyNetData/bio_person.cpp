@@ -1,6 +1,10 @@
 #include "stdafx.h"
 #include "bio_person.hpp"
 
+#include "bio_person_table.hpp"
+
+#include "Poco/StringTokenizer.h"
+
 namespace SmartBio
 {
 	namespace Data
@@ -156,6 +160,18 @@ namespace SmartBio
 		void BioPerson::setBioPhotoIndexs(const std::string& bio_photo_indexs)
 		{
 			bio_photo_indexs_ = bio_photo_indexs;
+			photos_.clear();
+			if (bio_photo_indexs_.empty())
+				return;
+
+			
+			Poco::StringTokenizer tk(bio_photo_indexs, ",", Poco::StringTokenizer::TOK_TRIM);
+
+			for (Poco::StringTokenizer::Iterator it = tk.begin(); it != tk.end(); ++it)
+			{
+				std::string temp(*it);
+				photos_.push_back(stoi(temp));
+			}		
 		}
 
 		void BioPerson::setEmail(const std::string& email)
@@ -173,6 +189,11 @@ namespace SmartBio
 			index_ = index;
 		}
 			
+
+		const std::string& BioPerson::tableName() 
+		{
+			return BioPersonTable::TABLE_NAME;
+		}
 
 	}
 }

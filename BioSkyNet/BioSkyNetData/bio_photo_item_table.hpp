@@ -1,77 +1,30 @@
 #ifndef Bio_PhotoItem_Table_INCLUDED
 #define Bio_PhotoItem_Table_INCLUDED
 
-#include <string>
-#include <vector>
-#include "Poco/String.h"
 #include "itable_query.hpp"
 
 namespace SmartBio
 {
 	namespace Data
 	{
+		class BioDbIO;
+		class BioPhotoItem;
 		class BioPhotoItemTable : public Interfaces::ITableQuery
 		{
 		public:
-			BioPhotoItemTable()
-			{
-				initialized_ = false;
-				createColumns();
-			}
-
 			~BioPhotoItemTable()	{	}
 
-			const std::string& tableName()
-			{
-				return TABLE_NAME;
-			}
-
+		private:
 			static const std::string TABLE_NAME;
 
-			std::string createTable()
-			{
-							
-				std::vector<std::string> query;
-				query.push_back(formatColumn(0, typeBigInteger(), " ", typePrimaryKey()));
-				query.push_back(formatColumn(1, typeNText()      , typeNotNull()));
-				query.push_back(formatColumn(2, typeNText()      , typeNotNull()));
-				query.push_back(formatColumn(3, typeTinyInteger(), typeNotNull()));
-				query.push_back(formatColumn(4, typeInteger()    , typeNotNull()));
-				query.push_back(formatColumn(5, typeTinyInteger(), typeNotNull()));
-				query.push_back(formatColumn(6, typeTinyInteger(), typeNotNull()));
-				query.push_back(formatColumn(7, typeNText()      , typeNotNull()));
-				query.push_back(formatColumn(8, typeInteger()    , typeNotNull()));
+			friend class BioDbIO     ;
+			friend class BioPhotoItem;
 
+			BioPhotoItemTable();		
 
-				std::string create_table_cols = Poco::cat(std::string(", "), query.begin(), query.end());
-
-				std::string result = create(create_table_cols);
-
-				return result;
-			}
-
-		private:
-
-			void createColumns()
-			{
-				if (!initialized_)
-				{
-					columns_.push_back("Id"              );
-					columns_.push_back("PhotoPath"       );
-					columns_.push_back("FirPath"         );
-					columns_.push_back("NaturalSkinColor");
-					columns_.push_back("Gender"          );
-					columns_.push_back("Age"             );
-					columns_.push_back("Glasses"         );
-					columns_.push_back("Resolution"      );
-					columns_.push_back("Etnicity"        );
-
-
-					initialized_ = true;
-				}
-			}
-
-
+			const std::string& tableName    ();						
+			std::string        createTable  ();
+			void               createColumns();
 		};
 	}
 }

@@ -89,7 +89,7 @@ namespace Poco
 				obj.setDateOfBirth(defVal.dateOfBirth());
 
 			if (pExt->extract(pos++, gender))
-				obj.setGender((SmartBio::Data::Gender)(gender));
+				obj.setGender((SmartBio::Gender)(gender));
 			else
 				obj.setGender(defVal.gender());
 
@@ -124,7 +124,7 @@ namespace Poco
 				obj.setComments(defVal.comments());
 
 			if (pExt->extract(pos++, rights))
-				obj.setRights((SmartBio::Data::Rights)(rights));
+				obj.setRights((SmartBio::Rights)(rights));
 			else
 				obj.setRights(defVal.rights());
 		}

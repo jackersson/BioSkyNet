@@ -14,6 +14,7 @@ using namespace SmartBio::Data;
 using namespace Poco::Data::Keywords;
 int main()
 {
+	/*
 	std::string address = "D:\\Spark\\BioSkyNet\\BioSkyNet\\BioSkyNetData\\dataBase\\bioskynet.db";	
 
 	std::string    first_name = "Taras";
@@ -87,7 +88,7 @@ int main()
 
 
 
-
+	*/
 	std::cin.get();
 	return 0;
 }

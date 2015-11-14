@@ -12,19 +12,19 @@ namespace Poco
 		class Poco::Data::TypeHandler<LocationType>
 		{
 		public:
-			static void bind(std::size_t pos, const LocationType& obj
-				, AbstractBinder::Ptr pBinder, AbstractBinder::Direction dir);
+			static void bind( std::size_t pos, const LocationType& obj
+				              , AbstractBinder::Ptr pBinder, AbstractBinder::Direction dir);
 
 
-			static void prepare(std::size_t pos, const LocationType& obj
-				, AbstractPreparator::Ptr pPrepare);
+			static void prepare( std::size_t pos, const LocationType& obj
+				                 , AbstractPreparator::Ptr pPrepare);
 
 
 			static std::size_t size();
 
 
-			static void extract(std::size_t pos, LocationType& obj
-				, const LocationType& defVal, AbstractExtractor::Ptr pExt);
+			static void extract( std::size_t pos, LocationType& obj
+				                 , const LocationType& defVal, AbstractExtractor::Ptr pExt);
 
 
 		private:

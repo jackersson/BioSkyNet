@@ -15,15 +15,16 @@ namespace Poco
 		{
 			poco_assert_dbg(!pBinder.isNull());
 
+			pBinder->bind(pos++, obj.index()              ,dir);
 			pBinder->bind(pos++, obj.photoPath()				 	,dir);
 			pBinder->bind(pos++, obj.firPath()						,dir);
-			pBinder->bind(pos++, obj.naturalSkinColor()	,dir);
-			pBinder->bind(pos++, obj.gender()						,dir);
+			pBinder->bind(pos++, obj.naturalSkinColor()	  ,dir);
+			pBinder->bind(pos++, obj.gender()						  ,dir);
 			pBinder->bind(pos++, obj.age()								,dir);
 			pBinder->bind(pos++, obj.glasses()						,dir);
-			pBinder->bind(pos++, obj.resolution()				,dir);
-			pBinder->bind(pos++, obj.etnicity()        	,dir);
-			pBinder->bind(pos++, obj.index()        		  ,dir);
+			pBinder->bind(pos++, obj.resolution()				  ,dir);
+			pBinder->bind(pos++, obj.etnicity()        	  ,dir);
+			pBinder->bind(pos++, obj.sampleQuality()      ,dir);
 	
 
 
@@ -56,6 +57,7 @@ namespace Poco
 			std::string        resolution				 	;
 			int                etnicity         	;
 			int                index            	;
+			float              sample_quality     ;
 
 
 
@@ -80,7 +82,7 @@ namespace Poco
 				obj.setNaturalSkinColor(defVal.naturalSkinColor());
 
 			if (pExt->extract(pos++, gender))
-				obj.setGender((SmartBio::Data::Gender)(gender));
+				obj.setGender((SmartBio::Gender)(gender));
 			else
 				obj.setGender(defVal.gender());
 
@@ -100,9 +102,14 @@ namespace Poco
 				obj.setResolution(defVal.resolution());
 
 			if (pExt->extract(pos++, etnicity))
-				obj.setEtnicity((SmartBio::Data::Etnicity)(etnicity));
+				obj.setEtnicity((SmartBio::Etnicity)(etnicity));
 			else
 				obj.setEtnicity(defVal.etnicity());
+
+			if (pExt->extract(pos++, sample_quality))
+				obj.setSampleQuality(sample_quality);
+			else
+				obj.setSampleQuality(defVal.sampleQuality());
 
 		}
 

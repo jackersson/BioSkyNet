@@ -2,26 +2,12 @@
 #define Bio_Person_INCLUDED
 
 #include "idatabase_io.hpp"
-
+#include "bio_data_types.hpp"
 
 namespace SmartBio
 {
 	namespace Data
-	{		
-		enum Gender
-		{
-			  Male = 0
-			, Female
-			, Undefined
-		};
-
-		enum Rights
-		{
-			  Manager = 0
-			, Superviser
-			, Operator
-		};
-	
+	{			
 		class BioPerson 
 		{
 		public:
@@ -65,16 +51,18 @@ namespace SmartBio
 			}
 
 			
-			const std::string&    firstName()       const;
-			const std::string&    lastName()        const;
-			Gender                gender()          const;
-			const std::string&    country()         const;
-			const std::string&    city()            const;
-			const std::string&    avatar()          const;
-			const std::string&    bioPhotoIndexs () const;
-			const std::string&    email()           const;
-			Rights                rights()          const;
-			const std::string&    comments()        const;
+			
+			const std::string&     firstName()       const;
+			const std::string&     lastName()        const;
+			Gender                 gender()          const;
+			const std::string&     country()         const;
+			const std::string&     city()            const;
+			const std::string&     avatar()          const;
+			const std::string&     bioPhotoIndexs () const;
+			const std::string&     email()           const;
+			Rights                 rights()          const;
+			const std::string&     comments()        const;
+			const std::vector<int> photoIndexes()    const;
 
 			
 			const Poco::DateTime& dateOfBirth()     const;
@@ -95,13 +83,8 @@ namespace SmartBio
 			void setBioPhotoIndexs(const std::string&    bio_photo_indexs);
 			void setEmail         (const std::string&    email           );
 			void setRights        (Rights                rights          );
+			static const std::string& tableName();
 
-			static const std::string& tableName()
-			{
-				static const std::string& table_name = "bio_subjects";
-				return table_name;
-			}
-			
 		private:
 			std::string    first_name_      ;
 			std::string    last_name_       ;
@@ -116,6 +99,8 @@ namespace SmartBio
 			Rights         rights_          ;
 
 			int            index_           ;
+
+			std::vector<int> photos_;
 			
 			static bool initialized;
 		};

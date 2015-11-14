@@ -2,42 +2,34 @@
 #define Bio_PhotoItem_INCLUDED
 
 #include "idatabase_io.hpp"
-#include "bio_person.hpp"
+#include "bio_data_types.hpp"
 
 namespace SmartBio
 {
 	namespace Data
 	{
 		
-		enum Etnicity
-		{
-			  Black = 0
-			, Asian
-			, White
-		};
-
 		class BioPhotoItem
 		{
 		public:
 			BioPhotoItem();
 
-			BioPhotoItem(int index
-				, const std::string&     photo_path
-				, const std::string&     fir_path
-				, bool               	   natural_skin_color
-				, Gender                 gender
-				, int                    age
-				, bool                   glasses
-				, const std::string&     resolution
-				, Etnicity               etnicity            );
+			BioPhotoItem( int index
+				          , const std::string&     photo_path
+				          , const std::string&     fir_path
+				          , bool               	   natural_skin_color
+				          , Gender                 gender
+				          , int                    age
+				          , bool                   glasses
+				          , const std::string&     resolution
+				          , Etnicity               etnicity         
+									, float                  sample_quality );
 
 			virtual ~BioPhotoItem();
 
 			bool operator==(const BioPhotoItem& other) const
 			{
 				return    index_ == other.index();
-
-
 			}
 
 			bool operator < (const BioPhotoItem& p) const
@@ -53,7 +45,6 @@ namespace SmartBio
 				return fir_path_;
 			}
 
-
 			const std::string&   photoPath()					 const;
 			const std::string&   firPath()						 const;
 			bool                 naturalSkinColor()	   const;
@@ -62,9 +53,8 @@ namespace SmartBio
 			bool                 glasses()						 const;
 			const std::string&   resolution()					 const;
 			Etnicity             etnicity()            const;
+			float                sampleQuality()       const;
 			int                  index()               const;
-
-
 
 		public:
 			void setPhotoPath        (const std::string&     photo_path        );  
@@ -75,12 +65,8 @@ namespace SmartBio
 			void setGlasses					 (bool                   glasses					 );
 			void setResolution			 (const std::string&     resolution				 );
 			void setEtnicity				 (Etnicity               etnicity          );
+			void setSampleQuality    (float                  sample_quality    );
 			void setIndex            (int                    index             );
-
-
-
-
-
 
 		private:
 			std::string        photo_path_         	;
@@ -91,6 +77,7 @@ namespace SmartBio
 			bool               glasses_					 		;
 			std::string        resolution_				 	;
 			Etnicity           etnicity_          	;
+			float              sample_quality_      ;
 			int                index_             	;
 			
 
